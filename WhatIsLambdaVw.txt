@@ -1,0 +1,82 @@
+Lambda as a Diagnostic Tool
+The lambda calculation determines the ratio between the amount of oxygen actually present in a combustion chamber vs. the amount that should have been present to obtain perfect combustion.
+
+Let's learn more about this remarkable tool, beginning with lambda's meaning. Lambda represents the ratio of the amount of oxygen actually present in a combustion chamber compared to the amount that should have been present in order to obtain "perfect" combustion. Thus, when a mixture contains exactly the amount of oxygen required to burn the amount of fuel present, the ratio will be one to one (Ll) and lambda will equal 1.00. If the mixture contains too much oxygen for the amount of fuel (a lean mixture), lambda will be greater than 1.00. If a mixture contains too little oxygen for the amount of fuel (a rich mixture), lambda will be less than 1.00.
+
+The Wide-Band sensor generates a variable signal as opposed to the simple rich/lean signal of a standard oxygen sensor. Because the signal varies in strength and also in current flow direction (polarity), it's impossible to directly view the signal with anything except an oscilloscope. However with the right supporting equipment, the Wide-Band sensor can be used for adjusting air/fuel mixture on any engine.
+
+We all know that perfect combustion requires an air/fuel ratio of approximately 14.7:1 (by weight) under normal conditions. Thus a lean air/fuel ratio of, say, 16:1 would translate to a lambda value of 1.088. (To calculate, divide 16 by 14.7.) A lambda of .97 would indicate an air/fuel ratio of 14.259:1 (derived by multiplying .97 by 14.7).
+
+Here's the magic: Lambda is completely unchanged by combustion. Even complete combustion or a total lack of combustion has no effect on lambda! This means we can take our exhaust gas samples at any point in the exhaust stream without having to worry about the effects of the catalytic converter.
+
+What's wrong with this car?
+
+HC: 2882 ppm CO: .81%
+
+CO2: 13.69% O2: 2.18%
+
+Is it a mechanical problem? An ignition problem? An air/fuel ratio imbalance? What are these emissions readings trying to tell us? At first glance, the high hydrocarbon (HC) reading would seem to indicate an abundance of available fuel, yet the very high oxygen (O2) reading might lead us to wonder if we're looking at a lean misfire condition. The relatively low carbon monoxide (CO) figure seems to rule out a rich mixture, while the carbon dioxide (CO2) reading might suggest either an inoperative catalytic converter or an engine mechanical efficiency problem.
+
+In this instance, lambda indicates a substantially rich mixture-just the opposite of what we might have thought based on the individual gas readings alone. After all, CO, normally the indicator of a rich condition, is considerably lower than Oz, which is the telltale indication of a lean exhaust. Coupled with the high HC readings, most of us would probably have pegged this as a lean misfire condition.
+
+In fact, these readings were taken on a Ford Escort with one plug wire grounded. The converter had been allowed to cool briefly (in hopes of avoiding a red-hot meltdown), but the heated oxygen sensor rapidly returned to closed-loop. The extra O2 content in the exhaust stream from the dead cylinder caused the PCM to command a rich mixture in response.
+
+What about this car?
+HC: 834 ppm CO: .01%
+
+CO2: 13.78% O2: 2.29%
+
+The gas readings result in a calculated value of 1.07 for lambda.This is obviously a lean mixture, in this case caused by a lazy oxygen sensor and a bad plug wire on an '86 Volkswagen Jetta.
+
+Try this set of readings.
+HC: 330 ppm CO: 8.49%
+
+CO2: 9.93% O2: .15%
+
+Here, lambda was .77, indicating an extremely rich mixture. These are tailpipe samples from a vehicle with a faulty (open) coolant temperature sensor.
+
+What can lambda analysis of these tailpipe readings tell us?
+HC: 72 ppm CO: .16%
+
+CO2: 15.24% O2: .86%
+
+In fact, at a lambda value of 1.03, this mixture is lean, even though the tailpipe measurements look fairly acceptable.
+
+Putting Lambda to Work
+At first look, it may seem as though lambda's value is extremely limited. After all, conventional gas analysis can tell us whether a vehicle is running rich or lean, right? (If you still think so, go back to our very first example for another look!) And with OBD II making fuel trim readings a part of every data stream, is there any great mystery as to what kind of mixture is going into the combustion chamber? Let's look at each of these questions.
+
+Remember that the main purpose of a catalytic converter is to clean up excessive emissions of hydrocarbons, carbon monoxide and oxides of nitrogen (NOx). The converter tries to turn them all into carbon dioxide and water (H2O). A good converter, then, can mask a slight mixture imbalance, whether to the lean end or rich end of the spectrum. When subjected to a chronically rich or lean mixture, the catalytic converter has to work harder, and its life span may be shortened.
+
+Will we see a chronic rich or lean condition in tailpipe gases? Only if the condition is severe, or if the mixture has already overloaded the catalyst. Lambda helps here by allowing us to see the incoming mixture so we can determine if it's correct.
+
+Catalytic converters generally function efficiently only when the incoming mixture is within about 4% of stoichiometry, or a lambda range from .96 to 1.04. Let's return to our last example above. At 1.03, lambda is narrowly within acceptable lean limits. But if this borderline lean condition persists over a long period of time, the catalyst will slowly degrade as a result of the excessive heat it generates while cleaning up the exhaust stream.
+
+Now let's consider the case of an OBD II-equipped vehicle. Suppose we see that long-term fuel trim shows the addition of 25% more fuel than originally programmed for the observed operating conditions (LTFT = +25%). And we have a continuous lean code. Obviously, many things might cause this condition, among them low fuel delivery, a faulty mass airflow (MAF) sensor, a large vacuum leak, even a faulty oxygen sensor. Can lambda help us narrow the field of suspects? It certainly can.
+
+Consider the O2 sensor. Assume there is no O2 sensor code. If lambda is essentially equal to 1.00, we can immediately eliminate the O2 sensor from consideration. Lambda will be correct at this fuel trim level only if the O2 sensor upon which the fuel trim is based is functioning correctly.
+
+Can we narrow the field further? If lambda remains essentially equal to 1.00 under idle, part-throttle and high-cruise conditions but fuel trim increases with load, we can rule out a vacuum leak. A vacuum leak constitutes a decreasing percentage of the incoming air charge as engine speed and load increase. Thus, we would focus on a fuel delivery problem or a MAF fault. If, however, we found lambda to be significantly less than 1.00, we would immediately suspect an O2 sensor fault-probably a short to ground.
+
+Exercises
+Let's apply what we've learned about lambda to the following examples. In each case, try to see what kinds of faults might account for the data. The answers and analyses appear after the five examples.
+
+An OBD I car with MAP and EGR shows LTFT at -15%, with STFT switching between ±5%. Lambda is 1.05, NOx levels are elevated, but all other tailpipe gases are within acceptable limits. The vehicle has failed its state tailpipe loaded emissions test. The EGR valve receives vacuum at the proper time during a road test. Manually opening the EGR valve at 2000 rpm causes the engine to run noticeably rough with no cylinder-specific misfires.
+An OBD II truck with MAF shows lambda at .96 at idle and 1.03 at cruise. Total fuel trim (LTFT
++ STFT) at idle is -12%, and total fuel trim at cruise is +9%. The customer complaint is a hesitation on acceleration. Fuel delivery is adequate. Temporarily disconnecting the EGR yields no improvement. A previous shop has cleared the codes, and all monitors are incomplete.
+
+An OBD II car with MAP and EGR runs slightly rough at idle, with somewhat elevated IAC counts. Lambda is .99. The roughness clears up at cruise, and lambda increases to 1.00. IAC counts at cruise are appropriate.
+Although it has a lambda value of .99, a MAF-equipped truck shows unacceptably elevated HC and CO tailpipe readings taken under loaded idle conditions immediately after prolonged highway cruise.
+Analysis and Answers
+The EGR valve is working properly, but, as the high lambda value shows, this vehicle is running lean. The PCM is subtracting fuel (LTFT negative), but only to a point (STFT switching). The fault must be in the U2 sensor. It's biased positive, possibly by a partial short circuit between the sensor line and the heater feed. Is the catalytic converter still good? If the NOx readings are less than double the limit, and if the condition has not yet damaged the NOx bed, the converter may be able to compensate adequately once it starts receiving the correct feed mixture. Still, the customer should be warned that further testing after the O2 sensor is replaced will be required to assess the converter's status.
+What's making this vehicle run rich at idle and lean at cruise? We know there's no fuel supply problem, and we've eliminated the EGR. The problem is not likely to be dirty injectors since the fuel trim response is not consistent between speed and load ranges. It can't be a vacuum leak, since the fuel trim response is the opposite of what one would expect.
+This truck has a contaminated MAF. The MAF is over reporting airflow at idle, and underreporting it at cruise, a double whammy! Different manufacturers have evolved different strategies for weighting data after code clearing. Some may default to maximum fuel addition up to +25%, while others may revert to zero correction; even the method used to clear codes-say, KOER vs. KOEO-may change the resulting re-learn strategy. In this case, the fuel trim numbers are a recently cleared PCM's response to a good O2 sensor. But, because the O2 monitors are incomplete, the PCM does not yet trust them enough to have reached a correct fuel trim value.
+The IAC counts are an important clue. Combined with the lambda readings, they indicate an engine compensating for a low idle caused by a slight vacuum leak. The most likely culprit here is a leaking EGR. (Lambda shows a rich response to reduced manifold absolute pressure. A normal vacuum leak of outside air would result in lower IAC counts, not higher ones.)
+The mixture is within 1% of stoichiometry. The preceding cruise must have brought the converter to temperature. What's left but a bad converter?
+
+The Critical Link
+Modern fuel control systems generally operate in a range of λ = 1 ±.01 under steady-state conditions. But just as you had to spend time gathering a library of known-good waveforms before you could really benefit from using an oscilloscope, you'll need to put in some time testing known-good vehicles in a variety of repeatable and diagnostically relevant driving conditions to truly benefit from lambda analysis.
+
+Some lean air/fuel sensor-equipped Hondas, for example, routinely operate at extremely lean lambda ranges in excess of 1.63 under highway cruise conditions. Tuners may wish to know that maximum power is usually achieved at a lambda value of approximately .85 under full-load conditions. Developing a library of known-good lambda values will become even more critical with the advent of gasoline direct injection (GDI) systems. Since GDI systems use a stratified charge and variable injection timing (as well as the more familiar variable injection duration), normal lambda values for these systems may approach 2.0 under some conditions. As wide-range air/fuel sensors (WRAFs) become more common, expect to see lambda values adopt an even wider range.
+
+Conclusion
+Although misfires may combine with normal feedback (closed-loop) operation to produce a counterintuitive rich condition, lambda analysis remains a powerful diagnostic tool. Routine use of lambda can quickly narrow your diagnostic focus for many driveability complaints, ruling mixture problems in or out in a very few minutes. Lambda analysis can pinpoint oxygen sensor faults such as biased sensors more quickly than other techniques. Lambda analysis coupled with fuel trim analysis can often quickly identify contaminated or faulty MAF sensors. And lambda analysis in conjunction with conventional exhaust gas readings can conclusively pinpoint faulty catalytic converters in a matter of seconds.
