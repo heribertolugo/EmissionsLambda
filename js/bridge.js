@@ -15,18 +15,8 @@ function getObject(id) {
 
 function loadBut() {
 
-	var but = new Array();
-		but[1] = "images/closeXButOver.gif";
-		but[2] = "images/yesButOver.gif";
-		but[3] = "images/noButOver.gif";
-		but[4] = "images/cancelButOver.gif";
-		
-	var size = new Array();
-		size[1] = "21,19";
-		size[2] = "100,28";
-		size[3] = "100,28";
-		size[4] = "100,28";
-	
+	var but = {1: 'images/closeXButOver.gif', 2: 'images/yesButOver.gif', 3: 'images/noButOver.gif', 4: 'images/cancelButOver.gif'};		
+	var size = {1: '21,19', 2: '100,28', 3: '100,28', 4: '100,28'};	
 	var over = 1;
 	while (over <9) {
 		navs = new Image(size[over]);
@@ -54,7 +44,7 @@ var printEn = "";
 var pageVal = "lambda";
 
 function makeNote() {
-	note = noteBox.value;
+	note = document.getElementsByName('noteBox')[0].value; //noteBox.value;
 	
 	pageVal = opener.pageHidIn.value;
 
@@ -69,33 +59,21 @@ function makeNote() {
 
 function writeNote() {
 
-pageVal = opener.pageHidIn.value;
+pageVal = opener.getElementsByName('pageHidIn')[0].value;
 
-	getObject('pageNote').innerHTML = opener.pageHidIn.value;
-	getObject('pageSection').innerHTML = opener.pageSecHidIn.value;
+	getObject('pageNote').innerHTML = opener.getElementsByName('pageHidIn')[0].value;
+	getObject('pageSection').innerHTML = opener.getElementsByName('pageSecHidIn')[0].value;
 	
-	noteBox.value = opener.eval(pageVal+'NoteValue').value;
-		if (opener.eval(pageVal+'PrintCheck').value=='ok')printOp.checked = true;
+	noteBox.value = opener.getElementsByName(pageVal+'NoteValue')[0].value;
+		if (opener.getElementsByName(pageVal+'PrintCheck')[0].value=='ok')printOp.checked = true;
 }
 
 
 //* ------------------------------------------------------ *//
 
 
-var gasses = new Array();
-	gasses[0] = "HC";
-	gasses[1] = "CO";
-	gasses[2] = "CO2";
-	gasses[3] = "O2";
-	gasses[4] = "HCV";
-	gasses[5] = "OCV";
-	gasses[6] = "K1";
-	
-var pages = new Array();
-	pages[1] = "Idle";
-	pages[2] = "Cruise";
-	pages[3] = "Custom";
-
+var gasses = {0: 'HC', 1: 'CO', 2: 'CO2', 3: 'O2', 4: 'HCV', 5: 'OCV', 6: 'K1'};	
+var pages = {1: 'Idle', 2: 'Cruise', 3: 'Custom'};
 var ThisPage = "";
 var divSetting = "";
 
@@ -131,7 +109,7 @@ getObject(info+'Info').className=divSetting;
 	if (divSetting == "divShow") {
 		for (i=0; i<gasses.length; i++) {
 		getObject(info+sect).className='gasShow';
-		getObject('prev'+info+gasses[i]+Lim).innerHTML=opener.parent.frames['bottomFrame'].eval('prnt'+info+gasses[i]+L).value;
+		getObject('prev'+info+gasses[i]+Lim).innerHTML=opener.parent.frames['bottomFrame'].getElementsByName('prnt'+info+gasses[i]+L)[0].value;
 		
 		}
 	}
@@ -150,11 +128,11 @@ function checkInput(P,L) {
 var showInfo = false;
 var p = P.toLowerCase();
 
-	if (opener.parent.frames['bottomFrame'].eval('prnt'+P+'HC'+L).value!="") {
-		if (opener.parent.frames['bottomFrame'].eval('prnt'+P+'CO'+L).value!="") {
-			if (opener.parent.frames['bottomFrame'].eval('prnt'+P+'CO2'+L).value!="") {
-				if (opener.parent.frames['bottomFrame'].eval('prnt'+P+'O2'+L).value!=""){
-					if (opener.parent.frames['bottomFrame'].eval('prnt'+P+'A'+L).value!="") showInfo = true;
+	if (opener.parent.frames['bottomFrame'].getElementsByName('prnt'+P+'HC'+L)[0].value!="") {
+		if (opener.parent.frames['bottomFrame'].getElementsByName('prnt'+P+'CO'+L)[0].value!="") {
+			if (opener.parent.frames['bottomFrame'].getElementsByName('prnt'+P+'CO2'+L)[0].value!="") {
+				if (opener.parent.frames['bottomFrame'].getElementsByName('prnt'+P+'O2'+L)[0].value!=""){
+					if (opener.parent.frames['bottomFrame'].getElementsByName('prnt'+P+'A'+L)[0].value!="") showInfo = true;
 				}
 			}
 		}
@@ -162,8 +140,8 @@ var p = P.toLowerCase();
 	if (showInfo == true) {
 	divSetting = "divShow";
 	setDivPrev(P,L);
-		if (opener.parent.frames['bottomFrame'].eval(p+'PrintCheck').value=='ok') {
-		getObject('prev'+P+'Note').innerHTML="Note: "+opener.parent.frames['bottomFrame'].eval(p+'NoteValue').value;
+		if (opener.parent.frames['bottomFrame'].getElementsByName(p+'PrintCheck')[0].value=='ok') {
+		getObject('prev'+P+'Note').innerHTML="Note: "+opener.parent.frames['bottomFrame'].getElementsByName(p+'NoteValue')[0].value;
 		}
 	}/* else if (showInfo != true) {
 	divSetting = "divHide";
