@@ -11,6 +11,9 @@ function getObject(id) {
 	return object;
 }
 
+function getInput(name) {
+	return document.getElementsByName(name)[0];
+}
 
 
 
@@ -132,10 +135,10 @@ function getVal(ifLimit,P,G) {
 	else L = "";
 
 	
-		if (isFinite(eval(G+'In'+L).value)!=true) {
+		if (isFinite(getInput(G+'In'+L).value)!=true) {
 			alert("Illegal character \rYou must enter a numerical value(Decimals ok)");
-			eval(G+'In'+L).select();
-		}else if (eval(G+'In'+L).value=="" || eval(G+'In'+L).value==" ") {
+			getInput(G+'In'+L).select();
+		}else if (getInput(G+'In'+L).value=="" || getInput(G+'In'+L).value==" ") {
 		//valQuit = confirm('You must enter a numerical value. \r Press OK to go back to entering a value');
 			//if (valQuit == true) {			
 			//eval(G+'In').focus();			
@@ -143,14 +146,14 @@ function getVal(ifLimit,P,G) {
 			window.focus();
 //* CO & CO2 VALUE CHANGE *//
 		}else { if (G=="co" || G=="co2"){		
-				eval(P+L)[G]=eval(G+'In'+L).value;				
-				getObject(eval(G+'_E1'+L)).innerHTML = eval(P+L)[G];
-				getObject(eval(G+'_E2'+L)).innerHTML = eval(P+L)[G];
-				getObject(eval(G+'_E3'+L)).innerHTML = eval(P+L)[G];
-				getObject(eval(G+'_E4'+L)).innerHTML = eval(P+L)[G];
+				eval(P+L)[G]=getInput(G+'In'+L).value;				
+				getObject(G+'_E1'+L).innerHTML = eval(P+L)[G];
+				getObject(G+'_E2'+L).innerHTML = eval(P+L)[G];
+				getObject(G+'_E3'+L).innerHTML = eval(P+L)[G];
+				getObject(G+'_E4'+L).innerHTML = eval(P+L)[G];
 				}else if (G=="hcv" || G=="ocv"){
 //* HCV VALUE CHANGE *//
-					if (G=="hcv" && eval(G+'In'+L).value!="1.8") {
+					if (G=="hcv" && getInput(G+'In'+L).value!="1.8") {
 					changeVal = confirm('Are you sure you want to change this value?');
 						if (changeVal == true) {						
 						okChangeValue = prompt('Enter new value','Only numerical values accepted');
@@ -165,45 +168,45 @@ function getVal(ifLimit,P,G) {
 									if (okChangeValue<=999){
 									eval(P+L)[G]=okChangeValue;
 									getObject('ocvIn'+L).focus();
-									eval(G+'In'+L).value=okChangeValue;
-									getObject(eval(G+'_E1'+L)).innerHTML = okChangeValue;
-									getObject(eval(G+'_E2'+L)).innerHTML = okChangeValue;
+									getInput(G+'In'+L).value=okChangeValue;
+									getObject(G+'_E1'+L).innerHTML = okChangeValue;
+									getObject(G+'_E2'+L).innerHTML = okChangeValue;
 									}else {
 									alert('Please enter a proper value'); 
 									eval(P+L)[G]="1.8";
-									eval(G+'In'+L).value="1.8";
-									getObject(eval(G+'_E1'+L)).innerHTML = "1.8";
-									getObject(eval(G+'_E2'+L)).innerHTML = "1.8";
+									getInput(G+'In'+L).value="1.8";
+									getObject(G+'_E1'+L).innerHTML = "1.8";
+									getObject(G+'_E2'+L).innerHTML = "1.8";
 									}
 								}else if(okChangeValue=="" || okChangeValue==" "){
 								alert("NUMBERS ONLY!");
 								eval(P+L)[G]="1.8";
-								eval(G+'In'+L).value="1.8";
-								getObject(eval(G+'_E1'+L)).innerHTML = "1.8";
-								getObject(eval(G+'_E2'+L)).innerHTML = "1.8";
+								getInput(G+'In'+L).value="1.8";
+								getObject(G+'_E1'+L).innerHTML = "1.8";
+								getObject(G+'_E2'+L).innerHTML = "1.8";
 								}
 							}else if (noAlpha==false){
 							alert("NUMBERS ONLY!");
 							eval(P+L)[G]="1.8";
-							eval(G+'In'+L).value="1.8";
-							getObject(eval(G+'_E1'+L)).innerHTML = "1.8";
-							getObject(eval(G+'_E2'+L)).innerHTML = "1.8";
+							getInput(G+'In'+L).value="1.8";
+							getObject(G+'_E1'+L).innerHTML = "1.8";
+							getObject(G+'_E2'+L).innerHTML = "1.8";
 							}
 							
 						}else if (changeVal == false) {
 						eval(P+L)[G]="1.8";
 						getObject('ocvIn'+L).focus();
-						eval(G+'In'+L).value="1.8";
-						getObject(eval(G+'_E1'+L)).innerHTML = eval(P+L)[G];
-						getObject(eval(G+'_E2'+L)).innerHTML = eval(P+L)[G];
+						getInput(G+'In'+L).value="1.8";
+						getObject(G+'_E1'+L).innerHTML = eval(P+L)[G];
+						getObject(G+'_E2'+L).innerHTML = eval(P+L)[G];
 						}
 						
-					}else if (G=="hcv" && eval(G+'In'+L).value=="1.8") {
+					}else if (G=="hcv" && getInput(G+'In'+L).value=="1.8") {
 					eval(P+L)[G]="1.8";
-					getObject(eval(G+'_E1'+L)).innerHTML = eval(P+L)[G];
-					getObject(eval(G+'_E2'+L)).innerHTML = eval(P+L)[G];
+					getObject(G+'_E1'+L).innerHTML = eval(P+L)[G];
+					getObject(G+'_E2'+L).innerHTML = eval(P+L)[G];
 //* OCV VALUE CHANGE *//
-					}if (G=="ocv" && eval(G+'In'+L).value!="0.017") {
+					}if (G=="ocv" && getInput(G+'In'+L).value!="0.017") {
 					changeVal = confirm('Are you sure you want to change this value?');
 						if (changeVal == true) {						
 						okChangeValue = prompt('Enter new value','Only numerical values accepted');
@@ -217,46 +220,46 @@ function getVal(ifLimit,P,G) {
 									if (okChangeValue<=999){
 									eval(P+L)[G]=okChangeValue;
 									getObject('k1In'+L).focus();
-									eval(G+'In'+L).value=okChangeValue;
-									getObject(eval(G+'_E1'+L)).innerHTML = okChangeValue;
-									getObject(eval(G+'_E2'+L)).innerHTML = okChangeValue;
+									getInput(G+'In'+L).value=okChangeValue;
+									getObject(G+'_E1'+L).innerHTML = okChangeValue;
+									getObject(G+'_E2'+L).innerHTML = okChangeValue;
 									}else {
 									alert('Please enter a proper value'); 
 									eval(P+L)[G]="0.017";
-									eval(G+'In'+L).value="0.017";
-									getObject(eval(G+'_E1'+L)).innerHTML = "0.017";
-									getObject(eval(G+'_E2'+L)).innerHTML = "0.017";
+									getInput(G+'In'+L).value="0.017";
+									getObject(G+'_E1'+L).innerHTML = "0.017";
+									getObject(G+'_E2'+L).innerHTML = "0.017";
 									}
 								}else if(okChangeValue=="" || okChangeValue==" "){
 								alert("NUMBERS ONLY!");
 								eval(P+L)[G]="0.017";
-								eval(G+'In'+L).value="0.017";
-								getObject(eval(G+'_E1'+L)).innerHTML = "0.017";
-								getObject(eval(G+'_E2'+L)).innerHTML = "0.017";
+								getInput(G+'In'+L).value="0.017";
+								getObject(G+'_E1'+L).innerHTML = "0.017";
+								getObject(G+'_E2'+L).innerHTML = "0.017";
 								}
 							}else if (noAlpha==false){
 							alert("NUMBERS ONLY!");
 							eval(P+L)[G]="0.017";
-							eval(G+'In'+L).value="0.017";
-							getObject(eval(G+'_E1'+L)).innerHTML = "0.017";
-							getObject(eval(G+'_E2'+L)).innerHTML = "0.017";
+							getInput(G+'In'+L).value="0.017";
+							getObject(G+'_E1'+L).innerHTML = "0.017";
+							getObject(G+'_E2'+L).innerHTML = "0.017";
 							}
 							
 						}else if (changeVal == false) {
 						eval(P+L)[G]="0.017";
 						getObject('k1In'+L).focus();
-						eval(G+'In'+L).value="0.017";
-						getObject(eval(G+'_E1'+L)).innerHTML = eval(P+L)[G];
-						getObject(eval(G+'_E2'+L)).innerHTML = eval(P+L)[G];
+						getInput(G+'In'+L).value="0.017";
+						getObject(G+'_E1'+L).innerHTML = eval(P+L)[G];
+						getObject(G+'_E2'+L).innerHTML = eval(P+L)[G];
 						}
 						
-					}else if (G=="ocv" && eval(G+'In'+L).value=="0.017") {
+					}else if (G=="ocv" && getInput(G+'In'+L).value=="0.017") {
 					eval(P+L)[G]="0.017";
-					getObject(eval(G+'_E1'+L)).innerHTML = eval(P+L)[G];
-					getObject(eval(G+'_E2'+L)).innerHTML = eval(P+L)[G];
+					getObject(G+'_E1'+L).innerHTML = eval(P+L)[G];
+					getObject(G+'_E2'+L).innerHTML = eval(P+L)[G];
 //* K1 VALUE CHANGE *//
 					}
-				}else if (G=="k1" && eval(G+'In'+L).value!="6.0") {
+				}else if (G=="k1" && getInput(G+'In'+L).value!="6.0") {
 				changeVal = confirm('Are you sure you want to change this value?');
 					if (changeVal == true) {						
 						okChangeValue = prompt('Enter new value','Only numerical values accepted');
@@ -270,47 +273,47 @@ function getVal(ifLimit,P,G) {
 									if (okChangeValue<=999){
 									eval(P+L)[G]=okChangeValue;
 									getObject('submitIt').focus();
-									eval(G+'In'+L).value=okChangeValue;
-									getObject(eval(G+'_E'+L)).innerHTML = okChangeValue;
+									getInput(G+'In'+L).value=okChangeValue;
+									getObject(G+'_E'+L).innerHTML = okChangeValue;
 									}else {
 									alert('Please enter a proper value'); 
 									eval(P+L)[G]="6.0";
-									eval(G+'In'+L).value="6.0";
-									getObject(eval(G+'_E'+L)).innerHTML = "6.0";
+									getInput(G+'In'+L).value="6.0";
+									getObject(G+'_E'+L).innerHTML = "6.0";
 									}
 								}else if(okChangeValue=="" || okChangeValue==" "){
 								alert("NUMBERS ONLY!");
 								eval(P+L)[G]="6.0";
-								eval(G+'In'+L).value="6.0";
-								getObject(eval(G+'_E'+L)).innerHTML = "6.0";
+								getInput(G+'In'+L).value="6.0";
+								getObject(G+'_E'+L).innerHTML = "6.0";
 								}
 							}else if (noAlpha==false){
 							alert("NUMBERS ONLY!");
 							eval(P+L)[G]="6.0";
-							eval(G+'In'+L).value="6.0";
-							getObject(eval(G+'_E'+L)).innerHTML = "6.0";
+							getInput(G+'In'+L).value="6.0";
+							getObject(G+'_E'+L).innerHTML = "6.0";
 							}
 							
 						}else if (changeVal == false) {
 						eval(P+L)[G]="6.0";
 						getObject('submitIt'+L).focus();
-						eval(G+'In'+L).value="6.0";
-						getObject(eval(G+'_E'+L)).innerHTML = eval(P+L)[G];
+						getInput(G+'In'+L).value="6.0";
+						getObject(G+'_E'+L).innerHTML = eval(P+L)[G];
 						}
 						
-			}else if (G=="k1" && eval(G+'In'+L).value=="6.0") {
+			}else if (G=="k1" && getInput(G+'In'+L).value=="6.0") {
 			eval(P+L)[G]="6.0";
-			getObject(eval(G+'_E'+L)).innerHTML = eval(P+L)[G];
+			getObject(G+'_E'+L).innerHTML = eval(P+L)[G];
 			}
 //* HC VALUE CHANGE (CHANGE FROM PPM TO %) *//				
 			else if (G=="hc"){
-			eval(P+L)[G]=eval(G+'In'+L).value*0.001*0.1;
-			getObject(eval(G+'_E'+L)).innerHTML = eval(P+L)[G];
+			eval(P+L)[G]=getInput(G+'In'+L).value*0.001*0.1;
+			getObject(G+'_E'+L).innerHTML = eval(P+L)[G];
 			}
 //* OTHERS VALUE CHANGE *//			
 			else {
-			eval(P+L)[G]=eval(G+'In'+L).value;
-			getObject(eval(G+'_E'+L)).innerHTML = eval(P+L)[G];
+			eval(P+L)[G]=getInput(G+'In'+L).value;
+			getObject(G+'_E'+L).innerHTML = eval(P+L)[G];
 			}			
 //* CALL FUNCTION TO SET VALUES USED IN FINAL PRINT *//
 		setPrntVal(P,G,L);
@@ -436,13 +439,13 @@ getObject('k1_E'+cL).innerHTML = eval(P)['k1'];
 	if (isFinite(lamResult) == false) alert("YOU MUST HAVE VEHICLE'S ENGINE RUNNING WHEN ANALYZING GASSES");
 	else { 
 	document.location.href=document.location.href+"#final"+cL;
-	getObject(eval('lambdaResult'+cL)).innerHTML=lamResult;
+	getObject('lambdaResult'+cL).innerHTML=lamResult;
 	setPrntVal2(P,'a',lamResult);
-	getObject(eval('afrResult'+cL)).innerHTML=est(lamResult*14.7)+" : 1";
+	getObject('afrResult'+cL).innerHTML=est(lamResult*14.7)+" : 1";
 	setPrntVal2(P,'afr',est(lamResult*14.7));
-		if (lamResult < 1) {getObject(eval('statusResult'+cL)).innerHTML="RICH"; setPrntVal2(P,'stat','RICH');}
-		else if (lamResult > 1) {getObject(eval('statusResult'+cL)).innerHTML="LEAN"; setPrntVal2(P,'stat','LEAN');}
-		else if (lamResult == 1) {getObject(eval('statusResult'+cL)).innerHTML="STOICHIOMETRIC"; setPrntVal2(P,'stat','STOICHIOMETRIC');}
+		if (lamResult < 1) {getObject('statusResult'+cL).innerHTML="RICH"; setPrntVal2(P,'stat','RICH');}
+		else if (lamResult > 1) {getObject('statusResult'+cL).innerHTML="LEAN"; setPrntVal2(P,'stat','LEAN');}
+		else if (lamResult == 1) {getObject('statusResult'+cL).innerHTML="STOICHIOMETRIC"; setPrntVal2(P,'stat','STOICHIOMETRIC');}
 		}
 	}
 }
