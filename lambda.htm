@@ -1,0 +1,390 @@
+<html>
+<head>
+<title>LAMBDA DIAGNOSTICS -- BROUGHT TO YOU BY EGRAFX</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="javascript" src="js/content.js"></script>
+<script language="javascript" src="js/lamEq.js"></script>
+<link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+<body bgcolor="#999999">
+
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="pageContShow" id="pageContMain">
+  <tr>
+    <td align="right" colspan="3"><img src="images/lambdaLogo.jpg" alt="You are currently at LAMBDA" border="0"></td>
+  </tr>
+  <tr>
+    <td align="left" colspan="3">&nbsp;&nbsp;Enter your values:</td>
+  </tr>
+  <tr>
+    <td align="left" colspan="3">
+	
+	<span class="gases">HC: 
+      <input type="text" name="hcIn" size="4" maxlength="4" tabindex="1" onBlur="javascript:getVal('none','lambdaGas','hc')" onFocus="javascript:nextVal('none',1,'hc')" />
+	  ppm
+	  &nbsp;&nbsp;
+	  CO:
+	  <input type="text" name="coIn" size="5" maxlength="5" tabindex="2" onBlur="javascript:getVal('none','lambdaGas','co')" onFocus="javascript:nextVal('none',2,'co')" />
+	  %
+	  &nbsp;&nbsp;
+	  CO&#178;:
+	  <input type="text" name="co2In" size="5" maxlength="5" tabindex="3" onBlur="javascript:getVal('none','lambdaGas','co2')" onFocus="javascript:nextVal('none',3,'co2')" />
+	  %
+	  &nbsp;&nbsp;
+	  O&#178;:
+	  <input type="text" name="o2In" size="5" maxlength="5" tabindex="4" onBlur="javascript:getVal('none','lambdaGas','o2')" onFocus="javascript:nextVal('none',4,'o2')" />
+	  %
+	</span>	
+	</td>
+  </tr>
+  <tr>
+    
+          <td colspan="3" valign="bottom">
+			<div class="gases2Show" id="gases2Main"> HCV: 
+        <input type="text" name="hcvIn" size="3" maxlength="3" tabindex="5" onBlur="javascript:getVal('none','lambdaGas','hcv')" onFocus="javascript:nextVal('none',5,'hcv')" value="1.8" />
+        &nbsp;&nbsp; OCV: 
+        <input type="text" name="ocvIn" size="5" maxlength="5" tabindex="6" onBlur="javascript:getVal('none','lambdaGas','ocv')" onFocus="javascript:nextVal('none',6,'ocv')" value="0.017" />
+        &nbsp;&nbsp; K1: 
+        <input type="text" name="k1In" size="3" maxlength="3" tabindex="7"  onBlur="javascript:getVal('none','lambdaGas','k1')" onFocus="javascript:nextVal('none',7,'k1')" value="6.0" />
+        &nbsp;&nbsp;&nbsp;&nbsp; <a href="javascript:calcIt('none','lambdaGas')" tabindex="8" id="submitIt"> 
+        <img src="images/submit.gif" align="absbottom" border="0" id="submitBut" onMouseOver="sbmtO('submit','R')" onMouseOut="sbmtO('submit','T')" alt="SUBMIT VALUES" /> 
+        </a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="javascript:resetData('lambda')" tabindex="9"> 
+        <img src="images/reset.gif" align="absbottom" border="0" id="resetBut" onMouseOver="sbmtO('reset','R')" onMouseOut="sbmtO('reset','T')" alt="RESET VALUES" /> 
+        </a> 
+        <!--			  &nbsp;&nbsp;&nbsp;&nbsp;
+			  <a href="javascript:switchIt('Limit')" tabindex="10">
+			  <img src="images/limits.gif" align="absbottom" border="0" id="limitsBut" onMouseOver="sbmtO('limits','R')" onMouseOut="sbmtO('limits','T')" alt="ENTER LIMITS VALUES" />
+			  </a>
+	-->
+      </div>
+			  
+			</td>
+		  </tr>
+		  <tr>
+          
+    <td width="218" height="25">
+<div class="Tl2BgShow" id="Tl2BgMain">&nbsp;</div></td>
+		  
+    <td align="left" width="100%">
+<div class="topBckgShow" id="topBckgMain"><img src="images/TopBgSpacer.gif"></div>
+        
+	</td>
+	<td width="32" height="25"><div class="TRcornerShow" id="TRcornerMain">&nbsp;</div></td>
+  </tr>
+  <tr><td colspan="3">
+      <table cellpadding="0" cellspacing="0" border="0" class="eq1" id="eq1Main">
+  <tr>
+  <td width="26" height="100%" align="left"><div class="LbgShow" id="LbgMain">&nbsp;</div></td>
+  <td width="100%">
+  
+            <table align="center" border="0" cellpadding="0" cellspacing="0" class="eq2Show" id="eq2Main">
+	  <tr>
+		  <td width="50" height="50"><div class="TLeqShow" id="TLeqMain">&nbsp;</div></td>
+		  <td width="100%"><div class="TeqTableShow" id="TeqTableMain">&nbsp;</div></td>
+		  <td width="50" height="50"><div class="TReqShow" id="TReqMain">&nbsp;</div></td>
+	  </tr>
+	  <tr>
+	  <td width="50" height="100%"><div class="LeqShow" id="LeqMain">&nbsp;</div></td>
+	  <td>
+  
+		         <table align="center" border="0" cellpadding="0" cellspacing="0" class="eq3Show" id="eq3Main">
+				  <tr>
+				      <td rowspan="6" width="120" align="left"><img src="images/lamEq.gif"></td>
+				  </tr>
+		  <tr>
+			          <td rowspan="2" nowrap><span id="co2_E1">[CO<font class="subnum">2</font>]</span> +&nbsp;&nbsp;</td>
+			          <td valign="bottom" align="center"><span id="co_E1">[CO]</span><br />
+                        <div class="divide">&nbsp;</div></td>
+			<td rowspan="2">&nbsp;&nbsp;+ <span id="o2_E">[O<font class="subnum">2</font>]</span> +&nbsp;&nbsp;</td>
+			          <td rowspan="3" align="center"><img src="images/par.gif" width="10" height="100"></td>
+					  <td rowspan="3" align="center"><img src="images/par.gif" width="10" height="90"></td>
+					  <td rowspan="3" align="center"><img src="images/par.gif" width="10" height="80"></td>
+			<td valign="bottom" align="center"><span id="hcv_E1">HCV</span><br />
+                        <div class="divide">&nbsp;</div></td>
+			<td rowspan="2">&nbsp;&nbsp;x&nbsp;&nbsp;</td>
+			<td colspan="2" valign="bottom" align="center">3.5<br />
+                        <div class="divide">&nbsp;</div></td>
+			<td rowspan="3"><img src="images/par2.gif" width="10" height="80" align="top"></td>
+			<td rowspan="2" align="center">&nbsp;&nbsp;-&nbsp;&nbsp;</td>
+			<td valign="bottom" align="center"><span id="ocv_E1">OCV</span><br />
+                        <div class="divide">&nbsp;</div></td>
+			<td rowspan="3"><img src="images/par2.gif" width="10" height="90" align="top"></td>
+			<td rowspan="2" align="center">&nbsp;&nbsp;x (<span id="co2_E3">[CO<font class="subnum">2</font>]</span> + <span id="co_E3">[CO]</span>) </td>
+			<td rowspan="3"><img src="images/par2.gif" width="10" height="100" align="top"></td>
+		  </tr>
+		  <tr>
+			<td valign="top" align="center">2</td>
+			<td valign="top" align="center">4</td>
+			<td rowspan="2" align="center">3.5 +&nbsp;&nbsp;</td>
+			<td align="center"><span id="co_E2">[CO]</span> <br />
+                        <div class="divide">&nbsp;</div></td>
+			<td valign="top" align="center">2</td>
+		  </tr>
+		  <tr>
+			  <td colspan="3">&nbsp;</td>
+			  <td colspan="2">&nbsp;</td>
+			  <td valign="top" align="center"><span id="co2_E2">[CO<font class="subnum">2</font>]</span></td>
+			  <td colspan="2">&nbsp;</td>
+			  <td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td colspan="16"><br />
+                        <div class="divideShow" id="divideMain">&nbsp;</div></td>
+			</tr>
+			<tr>
+				<td colspan="16">
+					<table align="center" border="0" cellpadding="0" cellspacing="0" class="eq4Show" id="eq4Main">
+						<tr>
+							<td rowspan="2"><img src="images/par.gif" width="10" height="50"></td>
+							<td rowspan="2" align="center"> 1 +&nbsp;&nbsp;</td>
+							<td valign="bottom" align="center"><span id="hcv_E2">HCV</span><br />
+                              <div class="divide">&nbsp;</div></td>
+							<td rowspan="2" align="center">&nbsp;&nbsp;-&nbsp;&nbsp;</td>
+							<td valign="bottom" align="center"><span id="ocv_E2">OCV</span><br />
+                              <div class="divide">&nbsp;</div></td>
+							<td rowspan="2"><img src="images/par2.gif" width="10" height="50"></td>
+							<td rowspan="2">&nbsp;&nbsp;x ( <span id="co_E4">[CO]</span> + <span id="co2_E4">[CO<font class="subnum">2</font>]</span> + ( <span id="k1_E">K<font class="subnum">1</font></span> x <span id="hc_E">[HC]</span> ) )</td>
+						</tr>
+						<tr>
+							<td valign="top" align="center">4</td>
+							<td valign="top" align="center">2</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		
+		</td>
+		<td width="50" height="100%"><div class="ReqShow" id="ReqMain">&nbsp;</div></td>
+		<tr>
+		<td width="50" height="50"><div class="BLeqShow" id="BLeqMain">&nbsp;</div></td>
+		<td width="100%"><div class="BeqTableShow" id="BeqTableMain">&nbsp;</div></td>
+		<td width="50" height="50"><div class="BReqShow" id="BReqMain">&nbsp;</div></td>
+		</tr>
+		</table>
+  
+  </td>
+  <td width="32" height="100%" align="right"><div class="RbgShow" id="RbgMain">&nbsp;</div></td>
+  </tr></table>
+  </td></tr>
+  <tr><td colspan="3">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="eq5Show" id="eq5Main">
+  <tr>
+    <td width="32" height="25" align="left">
+<div class="BLcornerShow" id="BLcornerMain">&nbsp;</div></td>
+  <td width="100%" height="25"><div class="botBckgShow" id="botBckgMain">&nbsp;</div></td>
+    <td width="32" height="25" align="right">
+<div class="BRcornerShow" id="BRcornerMain">&nbsp;</div></td>
+  </tr>
+</table></td></tr>
+<tr><td colspan="3" width="100%">
+      <table bgcolor="#000000" width="100%" class="finalVal1Show" id="finalVal1Main">
+<tr>
+          <td width="100%" align="center" nowrap>
+		  <a name="final"></a>
+		  <div class="finalValShow" id="finalValMain"> <img src="images/lambda.gif">&nbsp;=&nbsp;&nbsp;<span id="lambdaResult">&nbsp;</span> 
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+              AFR =&nbsp;&nbsp;<span id="afrResult">&nbsp;</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+              STATUS =&nbsp;&nbsp;<span id="statusResult">&nbsp;</span> </div>
+</td>
+</tr>
+
+</table>
+</td>
+</tr>
+<!--
+<tr>
+<td colspan="3" align="center">
+hc <input type="text" name="hcLimit" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+co <input type="text" name="coLimit" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="resultMenu">
+</select>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="button" name="SubmitLim" value="Submit" onClick="javascript:calcLimit()">
+</td>
+</tr>
+-->
+</table>
+
+
+
+<img src="images/page_logo.jpg" alt="LAMBDA DIAGNOSTICS" width="350" height="102" border="0" class="pageLogo">
+
+<!--
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="pageContHide" id="pageContLimit">
+	<tr>
+    <td align="right" colspan="3"><img src="images/lambdaLogo.jpg" alt="You are currently at LAMBDA" border="0"></td>
+  </tr>
+  <tr>
+    <td align="left" colspan="3">&nbsp;&nbsp;Enter your values:</td>
+  </tr>
+  <tr>
+    <td align="left" colspan="3">
+	
+	<span class="gases">HC: 
+      <input type="text" name="hcInLimit" size="4" maxlength="4" tabindex="11" onBlur="javascript:getVal('limit','lambdaGas','hc')" onFocus="javascript:nextVal('limit',9,'hc')" />
+	  ppm
+	  &nbsp;&nbsp;
+	  CO:
+	  <input type="text" name="coInLimit" size="5" maxlength="5" tabindex="12" onBlur="javascript:getVal('limit','lambdaGas','co')" onFocus="javascript:nextVal('limit',10,'co')" />
+	  %
+	  &nbsp;&nbsp;
+	  CO&#178;:
+	  <input type="text" readonly value="0" name="co2InLimit" size="5" maxlength="5" tabindex="13" class="ROinput" onBlur="javascript:getVal('limit','lambdaGas','co2')" onFocus="javascript:nextVal('limit',11,'co2')" />
+	  %
+	  &nbsp;&nbsp;
+	  O&#178;:
+	  <input type="text" readonly value="0" name="o2InLimit" size="5" maxlength="5" tabindex="14" class="ROinput" onBlur="javascript:getVal('limit','lambdaGas','o2')" onFocus="javascript:nextVal('limit',12,'o2')" />
+	  %
+	</span>	
+	</td>
+  </tr>
+  <tr>
+    
+          <td colspan="3" valign="bottom">
+			<div class="gases2Hide" id="gases2Limit">
+			  HCV: 
+			  <input type="text" name="hcvInLimit" size="3" maxlength="3" tabindex="15" onBlur="javascript:getVal('limit','lambdaGas','hcv')" onFocus="javascript:nextVal('limit',13,'hcv')" value="1.8" />
+			  &nbsp;&nbsp;
+			  
+			  OCV:
+			  <input type="text" name="ocvInLimit" size="5" maxlength="5" tabindex="16" onBlur="javascript:getVal('limit','lambdaGas','ocv')" onFocus="javascript:nextVal('limit',14,'ocv')" value="0.017" />
+			  &nbsp;&nbsp;
+			  
+			  K1:
+			  <input type="text" name="k1InLimit" size="3" maxlength="3" tabindex="17"  onBlur="javascript:getVal('limit','lambdaGas','k1')" onFocus="javascript:nextVal('limit',15,'k1')" value="6.0" />
+			  &nbsp;&nbsp;&nbsp;&nbsp;
+			  <a href="javascript:calcLimit('lambda')" tabindex="18">
+			  <img src="images/submit.gif" align="absbottom" border="0" alt="SUBMIT VALUES" id="submitLimBut" onMouseOver="sbmtO('submitLim','R')" onMouseOut="sbmtO('submitLim','T')" />
+			  </a>
+			  &nbsp;&nbsp;&nbsp;&nbsp;
+			  <a href="javascript:resetLim()" tabindex="19">
+			  <img src="images/reset.gif" align="absbottom" border="0" alt="RESET VALUES" id="resetLimBut" onMouseOver="sbmtO('resetLim','R')" onMouseOut="sbmtO('resetLim','T')" />
+			  </a>
+			  &nbsp;&nbsp;&nbsp;&nbsp;
+			  <a href="javascript:switchIt('Main')" tabindex="20">
+			  <img src="images/limits.gif" align="absbottom" border="0" alt="ENTER LIMITS VALUES" />
+			  </a>
+			  </div>
+			  
+			</td>
+		  </tr>
+		  <tr>
+          
+    <td width="218" height="25">
+<div class="Tl2BgHide" id="Tl2BgLimit">&nbsp;</div></td>
+		  
+    <td align="left" width="100%">
+<div class="topBckgHide" id="topBckgLimit"><img src="images/TopBgSpacer.gif"></div>
+        
+	</td>
+	<td width="32" height="25"><div class="TRcornerHide" id="TRcornerLimit">&nbsp;</div></td>
+  </tr>
+  <tr><td colspan="3">
+      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="eq1Hide" id="eq1Limit">
+  <tr>
+  <td width="26" height="100%" align="left"><div class="LbgHide" id="LbgLimit">&nbsp;</div></td>
+  <td width="100%">
+  
+            <table align="center" border="0" cellpadding="0" cellspacing="0" class="eq2Hide" id="eq2Limit">
+	  <tr>
+		  <td width="50" height="50"><div class="TLeqHide" id="TLeqLimit">&nbsp;</div></td>
+		  <td width="100%"><div class="TeqTableHide" id="TeqTableLimit">&nbsp;</div></td>
+		  <td width="50" height="50"><div class="TReqHide" id="TReqLimit">&nbsp;</div></td>
+	  </tr>
+	  <tr>
+	  <td width="50" height="100%"><div class="LeqHide" id="LeqLimit">&nbsp;</div></td>
+	  <td>
+  
+		         <table align="center" border="0" cellpadding="10" cellspacing="0" class="eq3Hide" id="eq3Limit">
+				  <tr>
+				      <td rowspan="5" width="120" align="left"><img src="images/lamEq.gif" /></td>
+				  </tr>
+		  <tr>
+			          <td align="center">					 
+							  Your goal for O2 will be shown below.<br>Please RESET current values BEFORE entering new values.
+							  </td>
+							  </tr>
+							  <tr>
+							  <td align="center" nowrap>
+							  You must keep your values at&nbsp;&nbsp;
+							  <select name="resultMenu" onChange="javascript:setSelected('lambdaGas')" style="visibility: inherit" id="resultsMenu">
+							  <option selected index="0" value="0">
+							  </select>.
+							  </td>
+							  </tr>
+							  <tr>
+							  <td align="center" nowrap>
+							  To maintain stoichiometry by &#177; .02
+							  </td>
+							  </tr>
+							 <tr>
+							   <td>
+							   
+							   <div style="visibility:hidden; display:none">
+							   <span id="co_E1Limit"></span><span id="co_E2Limit"></span><span id="co_E3Limit"></span><span id="co_E4Limit"></span>
+							   <span id="co2_E1Limit"></span><span id="co2_E2Limit"></span><span id="co2_E3Limit"></span><span id="co2_E4Limit"></span>
+							   <span id="hcv_E1Limit"></span><span id="hcv_E2Limit"></span>
+							   <span id="ocv_E1Limit"></span><span id="ocv_E2Limit"></span>
+							   <span id="hc_ELimit"></span><span id="o2_ELimit"></span><span id="k1_ELimit"></span>
+							   <span class="divideHide" id="divideLimit"></span>
+							   <span class="eq4Hide" id="eq4Limit"></span>
+							   </div>
+							   
+							  
+
+					  
+					  </td>				
+			</tr>
+		</table>
+		
+		</td>
+		<td width="50" height="100%"><div class="ReqHide" id="ReqLimit">&nbsp;</div></td>
+		<tr>
+		<td width="50" height="50"><div class="BLeqHide" id="BLeqLimit">&nbsp;</div></td>
+		<td width="100%"><div class="BeqTableHide" id="BeqTableLimit">&nbsp;</div></td>
+		<td width="50" height="50"><div class="BReqHide" id="BReqLimit">&nbsp;</div></td>
+		</tr>
+		</table>
+  
+  </td>
+  <td width="32" height="100%" align="right"><div class="RbgHide" id="RbgLimit">&nbsp;</div></td>
+  </tr></table>
+  </td></tr>
+  <tr><td colspan="3">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="eq5Hide" id="eq5Limit">
+  <tr>
+    <td width="32" height="25" align="left">
+<div class="BLcornerHide" id="BLcornerLimit">&nbsp;</div></td>
+  <td width="100%" height="25"><div class="botBckgHide" id="botBckgLimit">&nbsp;</div></td>
+    <td width="32" height="25" align="right">
+<div class="BRcornerHide" id="BRcornerLimit">&nbsp;</div></td>
+  </tr>
+</table></td></tr>
+<tr><td colspan="3" width="100%">
+      <table bgcolor="#000000" width="100%" class="finalVal1Hide" id="finalVal1Limit">
+<tr>
+          <td width="100%" align="center" nowrap>
+		  <a name="finalLimit"></a>
+		  <div class="finalValHide" id="finalValLimit">
+		  <img src="images/lambda.gif">&nbsp;=&nbsp;&nbsp;<span id="lambdaResultLimit">&nbsp;</span>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			AFR =&nbsp;&nbsp;<span id="afrResultLimit">&nbsp;</span>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			STATUS =&nbsp;&nbsp;<span id="statusResultLimit">&nbsp;</span>
+			</div>
+</td>
+</tr>
+
+</table>
+</td>
+</tr>
+</table>
+
+-->
+
+</body>
+</html>

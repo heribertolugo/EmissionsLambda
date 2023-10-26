@@ -1,0 +1,267 @@
+<html>
+<head>
+<title>LAMBDA DIAGNOSTICS -- BROUGHT TO YOU BY EGRAFX</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+
+// Returns the version of Internet Explorer or a -1
+// (indicating the use of another browser).
+function getInternetExplorerVersion(){
+
+  var rv = -1; // Return value assumes failure.
+  if (navigator.appName == 'Microsoft Internet Explorer')  {
+    var ua = navigator.userAgent;
+    var re  = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
+    if (re.exec(ua) != null){
+      rv = parseFloat( RegExp.$1 );
+	}
+  }
+  return rv;
+}
+
+
+function checkVersion(){
+  var ver = getInternetExplorerVersion();
+var sorry = 'SORRY. ONLY INTERNET EXPLORER 5 OR HIGHER IS SUPPORTED';
+	sorry += '<br />';
+	sorry += 'you can download it for free at <br />';
+	sorry += '<a href=http://windows.microsoft.com/en-US/internet-explorer/products/ie/home> Microsoft.com</a>';
+	sorry += '<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />';
+	
+	if ( ver > -1 ) {
+		if ( ver >= 5.0 ) {
+			self.location.href="home.htm";
+		}else{
+			document.write(sorry);
+		}
+	}else{
+		document.write(sorry);
+	}
+	
+}
+
+checkVersion();
+
+</script>
+<link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+
+<body bgcolor="#999999">
+
+SORRY. ONLY INTERNET EXPLORER 5 OR HIGHER IS SUPPORTED
+<br />
+and JavaScript must be enabled.
+<br />
+you can download it for free at <br />
+<a href=http://windows.microsoft.com/en-US/internet-explorer/products/ie/home> Microsoft.com</a>
+
+<!--
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="pagecont">
+  <tr>
+    <td align="right" colspan="3"><img src="images/cruiseLogo.jpg" alt="You are currently at LAMBDA" border="0"></td>
+  </tr>
+  <tr>
+    <td align="left" colspan="3">&nbsp;&nbsp;Enter your values:</td>
+  </tr>
+  <tr>
+    <td align="left" colspan="3">
+	<span class="gases">HC: 
+      <input type="text" name="hcIn" size="4" maxlength="4" tabindex="1">
+	  ppm
+	  &nbsp;&nbsp;
+	  CO:
+	  <input type="text" name="coIn" size="5" maxlength="5" tabindex="2">
+	  %
+	  &nbsp;&nbsp;
+	  CO&#178;:
+	  <input type="text" name="cmonoIn" size="5" maxlength="5" tabindex="3">
+	  %
+	  &nbsp;&nbsp;
+	  O&#178;:
+	  <input type="text" name="oxyIn" size="5" maxlength="5" tabindex="4">
+	  %
+	  auto
+      <input type="checkbox" name="autoOxy" value="checkbox" tabindex="5">
+	</span>
+	</td>
+  </tr>
+  <tr>
+    
+          <td colspan="3">
+			<div class="gases2">
+			  HCV: 
+			  
+            <input type="text" name="hcvIn" size="4" maxlength="4" tabindex="6">
+			  &nbsp;&nbsp;
+			  OCV:
+			  
+            <input type="text" name="ocvIn" size="5" maxlength="5" tabindex="7">
+			  &nbsp;&nbsp;
+			  K1:
+			  
+            <input type="text" name="kIn" size="5" maxlength="5" tabindex="8">
+			  </div>
+			</td>
+		  </tr>
+		  <tr>
+          
+    <td width="218" height="25">
+<div class="Tl2Bg">&nbsp;</div></td>
+		  
+    <td align="left" width="100%">
+<div class="topBckg"><img src="images/TopBgSpacer.gif"></div>
+        
+	</td>
+	<td width="32" height="25"><div class="TRcorner">&nbsp;</div></td>
+  </tr>
+  <tr><td colspan="3">
+      <table cellpadding="0" cellspacing="0" border="0" bgcolor="#003333" width="100%" background="images/BlueBg.gif">
+  <tr>
+  <td width="26" height="100%" align="left"><div class="Lbg">&nbsp;</div></td>
+  <td width="100%">
+  
+            <table align="center" border="0" cellpadding="0" cellspacing="0" bgcolor="#003366" background="images/EQbg.gif">
+	  <tr>
+		  <td width="50" height="50"><div class="TLeq">&nbsp;</div></td>
+		  <td width="100%"><div class="TeqTable">&nbsp;</div></td>
+		  <td width="50" height="50"><div class="TReq">&nbsp;</div></td>
+	  </tr>
+	  <tr>
+	  <td width="50" height="100%"><div class="Leq">&nbsp;</div></td>
+	  <td>
+  
+		          <table align="center" border="0" cellpadding="0" cellspacing="0" class="eq">
+				  <tr>
+				      <td rowspan="6" width="120" align="left"><img src="images/lamEq.gif"></td>
+				  </tr>
+		  <tr>
+			<td rowspan="2">[CO<span class="subNum">2</span>] +&nbsp;&nbsp;</td>
+			          <td valign="bottom" align="center">[CO]<br /><div class="divide">&nbsp;</div></td>
+			<td rowspan="2">&nbsp;&nbsp;+ [O<span class="subNum">2</span>] +&nbsp;&nbsp;</td>
+			          <td rowspan="3" align="center"><img src="images/par.gif" width="10" height="100"></td>
+					  <td rowspan="3" align="center"><img src="images/par.gif" width="10" height="90"></td>
+					  <td rowspan="3" align="center"><img src="images/par.gif" width="10" height="80"></td>
+			<td valign="bottom" align="center">HCV<br /><div class="divide">&nbsp;</div></td>
+			<td rowspan="2">&nbsp;&nbsp;x&nbsp;&nbsp;</td>
+			<td colspan="2" valign="bottom" align="center">3.5<br /><div class="divide">&nbsp;</div></td>
+			<td rowspan="3"><img src="images/par2.gif" width="10" height="80" align="top"></td>
+			<td rowspan="2" align="center">&nbsp;&nbsp;-&nbsp;&nbsp;</td>
+			<td valign="bottom" align="center">OCV<br /><div class="divide">&nbsp;</div></td>
+			<td rowspan="3"><img src="images/par2.gif" width="10" height="90" align="top"></td>
+			<td rowspan="2" align="center">&nbsp;&nbsp;x ([C0<span class="subNum">2</span>] + [CO]) </td>
+			<td rowspan="3"><img src="images/par2.gif" width="10" height="100" align="top"></td>
+		  </tr>
+		  <tr>
+			<td valign="top" align="center">2</td>
+			<td valign="top" align="center">4</td>
+			<td rowspan="2" align="center">3.5 +&nbsp;&nbsp;</td>
+			<td align="center">[CO] <br /><div class="divide">&nbsp;</div></td>
+			<td valign="top" align="center">2</td>
+		  </tr>
+		  <tr>
+			  <td colspan="3">&nbsp;</td>
+			  <td colspan="2">&nbsp;</td>
+			  <td valign="top" align="center">[CO<span class="subNum">2</span>]</td>
+			  <td colspan="2">&nbsp;</td>
+			  <td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td colspan="16"><br /><div class="divide">&nbsp;</div></td>
+			</tr>
+			<tr>
+				<td colspan="16">
+					<table align="center" border="0" cellpadding="0" cellspacing="0" class="eq">
+						<tr>
+							<td rowspan="2"><img src="images/par.gif" width="10" height="50"></td>
+							<td rowspan="2" align="center"> 1 +&nbsp;&nbsp;</td>
+							<td valign="bottom" align="center">HCV<br /><div class="divide">&nbsp;</div></td>
+							<td rowspan="2" align="center">&nbsp;&nbsp;-&nbsp;&nbsp;</td>
+							<td valign="bottom" align="center">OCV<br /><div class="divide">&nbsp;</div></td>
+							<td rowspan="2"><img src="images/par2.gif" width="10" height="50"></td>
+							<td rowspan="2">&nbsp;&nbsp;x ( [CO] + [CO<span class="subNum">2</span>] + ( K<span class="subNum">1</span> x [HC] ) )</td>
+						</tr>
+						<tr>
+							<td valign="top" align="center">4</td>
+							<td valign="top" align="center">2</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		
+		</td>
+		<td width="50" height="100%"><div class="Req">&nbsp;</div></td>
+		<tr>
+		<td width="50" height="50"><div class="BLeq">&nbsp;</div></td>
+		<td width="100%"><div class="BeqTable">&nbsp;</div></td>
+		<td width="50" height="50"><div class="BReq">&nbsp;</div></td>
+		</tr>
+		</table>
+  
+  </td>
+  <td width="32" height="100%" align="right"><div class="Rbg">&nbsp;</div></td>
+  </tr></table>
+  </td></tr>
+  <tr><td colspan="3">
+  <table cellpadding="0" cellspacing="0" border="0" bgcolor="#003333" width="100%" background="images/BlueBg.gif">
+  <tr>
+    <td width="32" height="25" align="left">
+<div class="BLcorner">&nbsp;</div></td>
+  <td width="100%" height="25"><div class="botBckg">&nbsp;</div></td>
+    <td width="32" height="25" align="right">
+<div class="BRcorner">&nbsp;</div></td>
+  </tr>
+</table></td></tr>
+<tr><td colspan="3" width="100%">
+      <table bgcolor="#000000" width="100%">
+<tr>
+          <td width="100%" align="center" nowrap>
+		  <div class="finalVal">
+		  <img src="images/lambda.gif">&nbsp;= <span>&nbsp;</span>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			AFR = <span>&nbsp;</span>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			STATUS = <span>&nbsp;</span>
+			</div>
+</td>
+</tr>
+<tr>
+<td width="100%">
+            <table width="100%" height="131" bgcolor="#000000" class="menuBg">
+			<tr>
+                <td rowspan="2" height="131"><img src="images/menuSpacer.gif" width="12" height="131" border="0"></td>
+              </tr>
+              <tr>
+                <td width="450" nowrap valign="middle" align="left">
+				<a href="#" onMouseOver="navOver('lam')" onMouseOut="navOut()"><img src="images/lamBut.gif" border="0" name="lam" id="lam"></a>
+				<a href="#" onMouseOver="navOver('idle')" onMouseOut="navOut()"><img src="images/idleBut.gif" border="0" name="idle" id="idle"></a>
+				<a href="#" onMouseOver="navOver('cruise')" onMouseOut="navOut()"><img src="images/cruiseBut.gif" border="0" name="cruise" id="cruise"></a>
+				<a href="#" onMouseOver="navOver('cus')" onMouseOut="navOut()"><img src="images/cusBut.gif" border="0" name="cus" id="cus"></a>
+				</td>
+				<td width="113"><img src="images/menuSpacer2.gif"></td>
+<td>
+                  <table width="50%" border="0" cellspacing="0" cellpadding="0" height="100%" align="left">
+                    <tr>
+                      <td><input type="submit" name="note" value="Note "></td>
+                      <td><input type="submit" name="close" value="Exit  "></td>
+                    </tr>
+                    <tr>
+                      <td><input type="submit" name="help" value="Help "></td>
+                      <td><input type="submit" name="printPage" value="Print"></td>
+                    </tr>
+                    <tr>
+                      <td colspan="2"><img src="images/menuSpacer3.gif"></td>
+                    </tr>
+                  </table>
+
+</td>
+</tr>
+</table>
+</td>
+</tr></table>
+</td></tr></table>
+
+<img src="images/page_logo.jpg" alt="LAMBDA DIAGNOSTICS" width="350" height="102" border="0" class="pageLogo">
+ -->
+</body>
+</html>

@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+
+
+<script language="javascript">
+
+</script>
+<script language="javascript">
+function setIt(){
+document.cookie='cookie9965=testShitagain; custid='+document.Orders.Name.value+'; expires=Fri, 07-Oct-2005 12:00:00 GMT-05:00; path="/";';
+
+}
+</script>
+<script language="javascript">
+function readCookie(fname) {
+//document.cookie='cookie2=orderForm;'
+var cookies=document.cookie;
+var startname=cookies.indexOf(fname+"=");
+var startvalue=cookies.indexOf("=" ,startname)+1;
+var endvalue=cookies.indexOf(";" ,startvalue);
+	if (endvalue==-1) {
+		endvalue=cookies.length;
+	}
+var fvalue=unescape(cookies.substring(startvalue, endvalue));
+return fvalue;
+}
+
+function tellIt(fn) {
+alert(readCookie(fn));
+}
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form name="Orders">
+Name = 
+  <input type="text" name="Name" id="Name"><br>
+CustId = <input type="text" name="CustId" id="CustId"><br>
+<input type="button" name="Submit" value="Submit" onClick="javascript:setIt()"><input type="button" name="get" value="get" onClick="javascript:tellIt('name')">
+fuck
+</form>
+</body>
+</html>

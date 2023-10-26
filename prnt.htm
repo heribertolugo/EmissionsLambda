@@ -1,0 +1,307 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Lambda Diagnostics -- Print --&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+.divShow {
+	border: thin solid #000000;
+	position: relative;
+	visibility: visible;
+	width: 100%;
+	left: 0px;
+	top: 0px;
+	display: block;
+}
+.divHide {
+	border: thin solid #000000;
+	position: relative;
+	visibility: hidden;
+	width: 80%;
+	left: 0px;
+	top: 0px;
+	display: none;
+}
+.gasShow {
+	font-family: Geneva, Arial, Helvetica, san-serif;
+	font-size: 14px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #000000;
+	text-decoration: none;
+}
+.gasHide {
+	display: none;
+	position: relative;
+	visibility: hidden;
+	left: 0px;
+	top: 0px;
+}
+.notesShow {
+	font-family: Geneva, Arial, Helvetica, san-serif;
+	font-size: 14px;
+	font-style: italic;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #000000;
+	text-decoration: none;
+}
+-->
+</style>
+<script language="JavaScript" src="js/bridge.js"></script>
+<style type="text/css">
+<!--
+.dialogTitle {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+	text-transform: none;
+	color: #FFFFFF;
+	text-decoration: none;
+	background-color: #000099;
+	width: 350px;
+	height: 23px;
+	position: relative;
+	visibility: inherit;
+	left: 0px;
+	top: 0px;
+}
+.dialog {
+	position: absolute;
+	visibility: visible;
+	z-index: 99999999;
+	left: 10px;
+	top: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #000000;
+	text-decoration: none;
+	background-image: url(images/dialogBg.gif);
+	background-color: #CCCCCC;
+	border-top-width: 2px;
+	border-right-width: 2px;
+	border-bottom-width: 2px;
+	border-left-width: 2px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #CCCCCC;
+	border-right-color: #000000;
+	border-bottom-color: #000000;
+	border-left-color: #CCCCCC;
+}
+-->
+</style>
+
+</head>
+
+<body onLoad="prevPrnt();">
+<div id="HeadInfo" class="divShow">
+  <center>
+    <img src="images/logo.gif" width="332" height="65">
+  </center>
+</div>
+<div id="CustInfo" class="divHide">1</div>
+<div id="LambdaInfo" class="divHide"> 
+  <table width="80%" border="0" cellspacing="0" cellpadding="5" id="LambdaE" class="gasHide">
+    <tr> 
+      <td colspan="7">Lambda Emissions</td>
+    </tr>
+    <tr> 
+      <td>HC:<span id="prevLambdaHC"></span></td>
+      <td>CO:<span id="prevLambdaCO"></span></td>
+      <td>CO2:<span id="prevLambdaCO2"></span></td>
+      <td>O2:<span id="prevLambdaO2"></span></td>
+      <td>OCV:<span id="prevLambdaOCV"></span></td>
+      <td>HCV:<span id="prevLambdaHCV"></span></td>
+      <td>K1:<span id="prevLambdaK1"></span></td>
+    </tr>
+    <tr> 
+      <td colspan="2">A=<span id="prevLambdaA"></span></td>
+      <td colspan="2">AFR=<span id="prevLambdaAFR"></span></td>
+      <td colspan="3">STATUS:<span id="prevLambdaSTAT"></span></td>
+    </tr>
+  </table>
+  <span id="prevLambdaNote" class="notesShow"></span>
+</div>
+
+<div id="IdleInfo" class="divHide"> 
+  <table width="80%" border="0" cellspacing="0" cellpadding="5" id="IdleE" class="gasHide">
+    <tr> 
+      <td colspan="7">Idle Emissions</td>
+    </tr>
+    <tr> 
+      <td>HC:<span id="prevIdleHC"></span></td>
+      <td>CO:<span id="prevIdleCO"></span></td>
+      <td>CO2:<span id="prevIdleCO2"></span></td>
+      <td>O2:<span id="prevIdleO2"></span></td>
+      <td>OCV:<span id="prevIdleOCV"></span></td>
+      <td>HCV:<span id="prevIdleHCV"></span></td>
+      <td>K1:<span id="prevIdleK1"></span></td>
+    </tr>
+    <tr> 
+      <td colspan="2">A=<span id="prevIdleA"></span></td>
+      <td colspan="2">AFR=<span id="prevIdleAFR"></span></td>
+      <td colspan="3">STATUS:<span id="prevIdleSTAT"></span></td>
+    </tr>
+  </table>
+  <table width="80%" border="0" cellspacing="0" cellpadding="5" id="IdleL" class="gasHide">
+    <tr> 
+      <td colspan="5">Idle Limits</td>
+    </tr>
+    <tr> 
+      <td>HC:<span id="prevIdleHCLimit"></span></td>
+      <td>CO:<span id="prevIdleCOLimit"></span></td>
+      <td>OCV<span id="prevIdleOCVLimit"></span></td>
+      <td>HCV<span id="prevIdleHCVLimit"></span></td>
+      <td>K1<span id="prevIdleK1Limit"></span></td>
+    </tr>
+    <tr> 
+      <td colspan="2">O2 Should be:<span id="prevIdleO2Limit"></span></td>
+      <td colspan="3">CO2 Should be:<span id="prevIdleCO2Limit"></span></td>
+    </tr>
+  </table>
+  <span id="prevIdleNote" class="notesShow">></span> </div>
+
+<div id="CruiseInfo" class="divHide"> 
+  <table width="80%" border="0" cellspacing="0" cellpadding="5" id="CruiseE" class="gasHide">
+    <tr> 
+      <td colspan="7">Cruise Emissions</td>
+    </tr>
+    <tr> 
+      <td>HC:<span id="prevCruiseHC"></span></td>
+      <td>CO:<span id="prevCruiseCO"></span></td>
+      <td>CO2:<span id="prevCruiseCO2"></span></td>
+      <td>O2:<span id="prevCruiseO2"></span></td>
+      <td>OCV:<span id="prevCruiseOCV"></span></td>
+      <td>HCV:<span id="prevCruiseHCV"></span></td>
+      <td>K1:<span id="prevCruiseK1"></span></td>
+    </tr>
+    <tr> 
+      <td colspan="2">A=<span id="prevCruiseA"></span></td>
+      <td colspan="2">AFR=<span id="prevCruiseAFR"></span></td>
+      <td colspan="3">STATUS:<span id="prevCruiseSTAT"></span></td>
+    </tr>
+  </table>
+  <table width="80%" border="0" cellspacing="0" cellpadding="5" id="CruiseL" class="gasHide">
+    <tr> 
+      <td colspan="5">Cruise Limits</td>
+    </tr>
+    <tr> 
+      <td>HC:<span id="prevCruiseHCLimit"></span></td>
+      <td>CO:<span id="prevCruiseCOLimit"></span></td>
+      <td>OCV<span id="prevCruiseOCVLimit"></span></td>
+      <td>HCV<span id="prevCruiseHCVLimit"></span></td>
+      <td>K1<span id="prevCruiseK1Limit"></span></td>
+    </tr>
+    <tr> 
+      <td colspan="2">O2 Should be:<span id="prevCruiseO2Limit"></span></td>
+      <td colspan="3">CO2 Should be:<span id="prevCruiseCO2Limit"></span></td>
+    </tr>
+  </table>
+  <span id="prevCruiseNote" class="notesShow">></span> </div>
+
+<div id="CustomInfo" class="divHide"> 
+  <table width="80%" border="0" cellspacing="0" cellpadding="5" id="CustomE" class="gasHide">
+    <tr> 
+      <td colspan="7">Custom Emissions</td>
+    </tr>
+    <tr> 
+      <td>HC:<span id="prevCustomHC"></span></td>
+      <td>CO:<span id="prevCustomCO"></span></td>
+      <td>CO2:<span id="prevCustomCO2"></span></td>
+      <td>O2:<span id="prevCustomO2"></span></td>
+      <td>OCV:<span id="prevCustomOCV"></span></td>
+      <td>HCV:<span id="prevCustomHCV"></span></td>
+      <td>K1:<span id="prevCustomK1"></span></td>
+    </tr>
+    <tr> 
+      <td colspan="2">A=<span id="prevCustomA"></span></td>
+      <td colspan="2">AFR=<span id="prevCustomAFR"></span></td>
+      <td colspan="3">STATUS:<span id="prevCustomSTAT"></span></td>
+    </tr>
+  </table>
+  <table width="80%" border="0" cellspacing="0" cellpadding="5" id="CustomL" class="gasHide">
+    <tr> 
+      <td colspan="5">Custom Limits</td>
+    </tr>
+    <tr> 
+      <td>HC:<span id="prevCustomHCLimit"></span></td>
+      <td>CO:<span id="prevCustomCOLimit"></span></td>
+      <td>OCV<span id="prevCustomOCVLimit"></span></td>
+      <td>HCV<span id="prevCustomHCVLimit"></span></td>
+      <td>K1<span id="prevCustomK1Limit"></span></td>
+    </tr>
+    <tr> 
+      <td colspan="2">O2 Should be:<span id="prevCustomO2Limit"></span></td>
+      <td colspan="3">CO2 Should be:<span id="prevCustomCO2Limit"></span></td>
+    </tr>
+  </table>
+  <span id="prevCustomNote" class="notesShow">></span> </div>
+
+<div class="divHide"> <span id="prevLambdaALimit"></span> <span id="prevIdleALimit"></span> 
+  <span id="prevCruiseALimit"></span> <span id="prevCustomALimit"></span> </div>
+  
+  <!-- ************************************* -->
+  <!-- START PROMPT FOR CUSTOMER INFO OPTION -->
+  <!-- ************************************* -->
+<!--
+<div id="custPrompt">
+<table width="350" height="138" border="0" cellpadding="2" cellspacing="0" background="images/dialogBg.gif" class="dialog">
+  <tr>
+    <td height="23" colspan="3" align="center" valign="top" nowrap bgcolor="#000099">
+		<table height="100%" border="0" cellspacing="0" cellpadding="0" class="dialogTitle">
+		  <tr>
+			<td width="328" height="23">Lambda Diagnostics</td>
+			<td width="21" height="23" align="right" valign="top">
+			<a href="" onMouseOver="javascript:buttOver('closeX')" onMouseOut="javascript:buttOut()">
+				<img src="images/closeXBut.gif" alt="Close" width="21" height="19" border="0" name="closeX">
+				</a>
+			</td>
+		  </tr>
+		</table>
+	</td>
+  </tr>
+  <tr>
+    <td colspan="3" align="center" valign="middle">
+		Would you like to enter Customer Information?
+	</td>
+  </tr>
+  <tr>
+    <td align="center">
+		<a href="" onMouseOver="javascript:buttOver('yes')" onMouseOut="javascript:buttOut()">
+		<img src="images/yesBut.gif" name="yes" width="100" height="28" border="0" align="center">
+		</a>
+	</td>
+    <td align="center">
+		<a href="" onMouseOver="javascript:buttOver('no')" onMouseOut="javascript:buttOut()">
+		<img src="images/noBut.gif" name="no" width="100" height="28" border="0" align="center">
+		</a>
+	</td>
+    <td align="center">
+		<a href="" onMouseOver="javascript:buttOver('cancel')" onMouseOut="javascript:buttOut()">
+		<img src="images/cancelBut.gif" name="cancel" width="100" height="28" border="0" align="center">
+		</a>
+	</td>
+  </tr>
+</table>
+-->
+
+</div>
+</body>
+</html>

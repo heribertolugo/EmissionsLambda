@@ -1,0 +1,317 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+.test {
+	font-family: Geneva, Arial, Helvetica, san-serif;
+	font-size: 14px;
+	color: #000000;
+	background-color: #CCCCCC;
+	overflow: hidden;
+	padding: 2px;
+	text-align: center;
+	margin: 1px 2px 3px 4px;
+	border: 2px solid #CCCCCC;
+}
+-->
+</style>
+<style type="text/css">
+<!--
+input {
+	font-family: Geneva, Arial, Helvetica, san-serif;
+	font-size: 14px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #000000;
+	text-decoration: none;
+}
+select {
+	font-family: Geneva, Arial, Helvetica, san-serif;
+	font-size: 14px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #000000;
+	text-decoration: none;
+}
+.addToBox {
+position:absolute; 
+left:650; 
+top:400; 
+visibility:visible; 
+overflow: hidden; 
+display:inline; 
+border: 2px solid #0099CC; 
+height:200px; 
+font-family: Geneva, Arial, Helvetica, san-serif; 
+font-size: 14px; 
+color: #000000; 
+background-color: #0099CC; 
+z-index:50
+}
+.addToBoxOp {
+position:absolute; 
+left:650; 
+top:400; 
+visibility:visible; 
+overflow: hidden; 
+display:inline; 
+border: 2px solid #FFFFFF; 
+height:200px; 
+width:300px; 
+font-family: Geneva, Arial, Helvetica, san-serif; 
+font-size: 14px; 
+color: #000000; 
+background-color: #FFFFFF; 
+z-index:250
+}
+.hideIt {
+position:absolute; 
+left:650; 
+top:400; 
+visibility:hidden; 
+overflow: hidden; 
+display:none; 
+}
+-->
+</style>
+<script src="js/customer.js"></script>
+<script>
+//onLoad="setEvents()"
+</script>
+
+</head>
+
+<body onLoad="setDelMenu()">
+ 
+
+<table width="606" border="1" cellspacing="0" cellpadding="0" style="position:absolute; left:0; top:0; visibility:visible; display:block; width:606px; height:350px; font-family: Geneva, Arial, Helvetica, san-serif; font-size: 14px; color: #000000; background-color:#ffffff; z-index:1" id="itemGrid">
+  <tr> 
+    <td width="202" height="50">&nbsp;</td>
+    <td width="202" height="50">&nbsp;</td>
+    <td width="202" height="50">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td width="202" height="50">&nbsp;</td>
+    <td width="202" height="50">&nbsp;</td>
+    <td width="202" height="50">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td width="202" height="50">&nbsp;</td>
+    <td width="202" height="50">&nbsp;</td>
+    <td width="202" height="50">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td width="202" height="50">&nbsp;</td>
+    <td width="202" height="50">&nbsp;</td>
+    <td width="202" height="50">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td width="202" height="50">&nbsp;</td>
+    <td width="202" height="50">&nbsp;</td>
+    <td width="202" height="50">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td width="202" height="50">&nbsp;</td>
+    <td width="202" height="50">&nbsp;</td>
+    <td width="202" height="50">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td width="202" height="50">&nbsp;</td>
+    <td width="202" height="50">&nbsp;</td>
+    <td width="202" height="50">&nbsp;</td>
+  </tr>
+</table>
+
+
+
+
+<form name="info">
+<div style="position:absolute; left:10; top:10; visibility:visible; overflow: hidden; display:inline; border: 2px solid #CCCCCC; width:188px; height:32px; font-family: Geneva, Arial, Helvetica, san-serif; font-size: 14px; color: #000000; background-color: #CCCCCC; z-index:50" id="WOItem">
+	WO# <input name="WO" type="text" size="7"></div>
+<div style="position:absolute; left:210; top:10; visibility:visible; overflow: hidden; display:inline; border: 2px solid #CCCCCC; width:188px; height:32px; font-family: Geneva, Arial, Helvetica, san-serif; font-size: 14px; color: #000000; background-color: #CCCCCC; z-index:50" id="Other1Item">
+	Available Space #1<input name="Other1" type="hidden" size="7"></div>
+<div style="position:absolute; left:410; top:10; visibility:visible; overflow: hidden; display:inline; border: 2px solid #CCCCCC; width:188px; height:32px; font-family: Geneva, Arial, Helvetica, san-serif; font-size: 14px; color: #000000; background-color: #CCCCCC; z-index:50" id="CurdateItem">
+	<input name="Curdate" type="text" value="11/11/05" size="8" maxlength="8" readonly="true"></div>
+
+<div style="position:absolute; left:10; top:60; visibility:visible; overflow: hidden; display:inline; border: 2px solid #CCCCCC; width:188px; height:32px; font-family: Geneva, Arial, Helvetica, san-serif; font-size: 14px; color: #000000; background-color: #CCCCCC; z-index:50" id="FNameItem">
+	FName <input name="FName" type="text" size="10"></div>
+<div style="position:absolute; left:210; top:60; visibility:visible; overflow: hidden; display:inline; border: 2px solid #CCCCCC; width:188px; height:32px; font-family: Geneva, Arial, Helvetica, san-serif; font-size: 14px; color: #000000; background-color: #CCCCCC; z-index:50" id="Other2Item">
+	Available Space #2<input name="Other2" type="hidden" size="10"></div>
+<div style="position:absolute; left:410; top:60; visibility:visible; overflow: hidden; display:inline; border: 2px solid #CCCCCC; width:188px; height:32px; font-family: Geneva, Arial, Helvetica, san-serif; font-size: 14px; color: #000000; background-color: #CCCCCC; z-index:50" id="LNameItem">
+	LName <input name="LName" type="text" size="10"></div>
+
+<div style="position:absolute; left:10; top:110; visibility:visible; overflow: hidden; display:inline; border: 2px solid #CCCCCC; width:188px; height:32px; font-family: Geneva, Arial, Helvetica, san-serif; font-size: 14px; color: #000000; background-color: #CCCCCC; z-index:50" id="AddressItem">
+	Address <input name="Address" type="text" size="14"></div>
+<div style="position:absolute; left:210; top:110; visibility:visible; overflow: hidden; display:inline; border: 2px solid #CCCCCC; width:188px; height:32px; font-family: Geneva, Arial, Helvetica, san-serif; font-size: 14px; color: #000000; background-color: #CCCCCC; z-index:50" id="Other3Item">
+	Available Space #3<input name="Other3" type="hidden" size="14"></div>
+<div style="position:absolute; left:410; top:110; visibility:visible; overflow: hidden; display:inline; border: 2px solid #CCCCCC; width:188px; height:32px; font-family: Geneva, Arial, Helvetica, san-serif; font-size: 14px; color: #000000; background-color: #CCCCCC; z-index:50" id="PhoneItem">
+	Phone <input name="Phone" type="text" size="13" maxlength="20"></div>
+
+<div style="position:absolute; left:10; top:160; visibility:visible; overflow: hidden; display:inline; border: 2px solid #CCCCCC; width:188px; height:32px; font-family: Geneva, Arial, Helvetica, san-serif; font-size: 14px; color: #000000; background-color: #CCCCCC; z-index:50" id="CityItem">
+	City <input name="City" type="text" size="10"></div>
+<div style="position:absolute; left:210; top:160; visibility:visible; overflow: hidden; display:inline; border: 2px solid #CCCCCC; width:188px; height:32px; font-family: Geneva, Arial, Helvetica, san-serif; font-size: 14px; color: #000000; background-color: #CCCCCC; z-index:50" id="StateItem">
+	State <select name="State"></select></div>
+<div style="position:absolute; left:410; top:160; visibility:visible; overflow: hidden; display:inline; border: 2px solid #CCCCCC; width:188px; height:32px; font-family: Geneva, Arial, Helvetica, san-serif; font-size: 14px; color: #000000; background-color: #CCCCCC; z-index:50" id="ZipItem">
+	Zip <input name="Zip" type="text" size="6" maxlength="5"></div>
+
+<div style="position:absolute; left:10; top:210; visibility:visible; overflow: hidden; display:inline; border: 2px solid #CCCCCC; width:188px; height:32px; font-family: Geneva, Arial, Helvetica, san-serif; font-size: 14px; color: #000000; background-color: #CCCCCC; z-index:50" id="VYearItem">
+	Year <select name="VYear"></select></div>
+<div style="position:absolute; left:210; top:210; visibility:visible; overflow: hidden; display:inline; border: 2px solid #CCCCCC; width:188px; height:32px; font-family: Geneva, Arial, Helvetica, san-serif; font-size: 14px; color: #000000; background-color: #CCCCCC; z-index:50" id="VMakeItem">
+	Make <input name="VMake" type="text" size="15" maxlength="15"></div>
+<div style="position:absolute; left:410; top:210; visibility:visible; overflow: hidden; display:inline; border: 2px solid #CCCCCC; width:188px; height:32px; font-family: Geneva, Arial, Helvetica, san-serif; font-size: 14px; color: #000000; background-color: #CCCCCC; z-index:50" id="VModelItem">
+	Model <input name="VModel" type="text" size="15" maxlength="15"></div>
+
+<div style="position:absolute; left:10; top:260; visibility:visible; overflow: hidden; display:inline; border: 2px solid #CCCCCC; width:188px; height:32px; font-family: Geneva, Arial, Helvetica, san-serif; font-size: 14px; color: #000000; background-color: #CCCCCC; z-index:50" id="VColorItem">
+	Color <input name="VColor" type="text" size="10" maxlength="10"></div>
+<div style="position:absolute; left:210; top:260; visibility:visible; overflow: hidden; display:inline; border: 2px solid #CCCCCC; width:188px; height:32px; font-family: Geneva, Arial, Helvetica, san-serif; font-size: 14px; color: #000000; background-color: #CCCCCC; z-index:50" id="VEngineItem">
+	Engine <input name="VEngine" type="text" size="5" maxlength="4"></div>
+<div style="position:absolute; left:410; top:260; visibility:visible; overflow: hidden; display:inline; border: 2px solid #CCCCCC; width:188px; height:32px; font-family: Geneva, Arial, Helvetica, san-serif; font-size: 14px; color: #000000; background-color: #CCCCCC; z-index:50" id="VVinItem">
+	Vin <input name="VVin" type="text" size="18" maxlength="17"></div>
+
+<div style="position:absolute; left:10; top:310; visibility:visible; overflow: hidden; display:inline; border: 2px solid #CCCCCC; width:188px; height:32px; font-family: Geneva, Arial, Helvetica, san-serif; font-size: 14px; color: #000000; background-color: #CCCCCC; z-index:50" id="Other4Item">
+	Available Space #4<input name="Other4" type="hidden" size="5" maxlength="4"></div>
+<div style="position:absolute; left:210; top:310; visibility:visible; overflow: hidden; display:inline; border: 2px solid #CCCCCC; width:188px; height:32px; font-family: Geneva, Arial, Helvetica, san-serif; font-size: 14px; color: #000000; background-color: #CCCCCC; z-index:50" id="Other5Item">
+	Available Space #5<input name="Other5" type="hidden" size="5" maxlength="4"></div>
+<div style="position:absolute; left:410; top:310; visibility:visible; overflow: hidden; display:inline; border: 2px solid #CCCCCC; width:188px; height:32px; font-family: Geneva, Arial, Helvetica, san-serif; font-size: 14px; color: #000000; background-color: #CCCCCC; z-index:50" id="Other6Item">
+	Available Space #6<input name="Other6" type="hidden" size="5" maxlength="4"></div>
+
+
+
+<table border="0" cellspacing="0" cellpadding="5" style="position:absolute; left:10; top:400; visibility:visible; overflow: hidden; display:inline; border: 2px solid #CCCCCC; height:200px; font-family: Geneva, Arial, Helvetica, san-serif; font-size: 14px; color: #000000; background-color: #CCCCCC; z-index:50">
+  <tr> 
+    <td>&nbsp;</td>
+    <td width="25">&nbsp;</td>
+    <td colspan="2" bgcolor="#0099CC">ADD:</td>
+    <td width="25">&nbsp;</td>
+    <td colspan="2" bgcolor="#33CCCC">DELETE:</td>
+  </tr>
+  <tr> 
+    <td><input name="" type="button" value="Input Data" onClick="releaseAll()"></td>
+    <td>&nbsp;</td>
+    <td bgcolor="#0099CC"><input name="" type="button" value="Add Item" onClick="javascript:setAddBut('addSel')"></td>
+    <td rowspan="3" bgcolor="#0099CC"><select name="addItem" size="5"></select></td>
+    <td>&nbsp;</td>
+    <td bgcolor="#33CCCC"><input name="deleteItemBut" type="button" value="Delete" onClick="javascript:setDelBut()"></td>
+    <td rowspan="3" bgcolor="#33CCCC"><select name="deleteItem" size="5"></select></td>
+  </tr>
+  <tr> 
+    <td><input name="" type="button" value="Move Item" onClick="setEvents()"></td>
+    <td>&nbsp;</td>
+    <td bgcolor="#0099CC"><input name="" type="button" value="Add Custom" onClick="javascript:setAddBut('addCus')"></td>
+    <td>&nbsp;</td>
+    <td bgcolor="#33CCCC"><input name="deleteAllBut" type="button" value="Delete All" onClick="javascript:setDelAllBut()"></td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td bgcolor="#0099CC">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td bgcolor="#33CCCC">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td colspan="7">
+	<input name="" type="button" value="SUBMIT" onClick="updateTest()">
+	<input name="" type="button" value="RESET">
+	<input name="" type="button" value="CANCEL">
+	</td>
+  </tr>
+</table>
+</form>
+
+<div style="position:absolute; left:650; top:10; visibility:visible; overflow: hidden; display:block; border: 2px solid #CCCCCC; width:300px; height:350px; font-family: Geneva, Arial, Helvetica, san-serif; font-size: 14px; color: #000000; background-color: #CCCCCC; z-index:50" id="testBlock">
+<table border="1" cellspacing="0" cellpadding="10" style="width:100%; height:20px; font-family: Geneva, Arial, Helvetica, san-serif; font-size: 14px; color: #000000; background-color: #CCCCCC; z-index:50">
+  <tr>
+    <td>Grave Yard</td>
+    <td>Item Array</td>
+  </tr>
+  <tr>
+    <td><select name="testMen" size="1"></select></td>
+    <td><select name="testMen2" size="1"></select></td>
+  </tr>
+  <tr>
+    <td>Other Array</td>
+    <td>???</td>
+  </tr>
+  <tr>
+    <td><select name="otherTest" size="1"></select></td>
+    <td><select name="" size="1"></select></td>
+  </tr>
+</table>
+</div>
+
+
+<form name="addToEl">
+<table border="0" cellspacing="0" cellpadding="0" class="hideIt" id="addBox">
+  <tr>
+    <td>
+			<fieldset><legend>ADD TO:</legend>
+			<table border="0" cellspacing="0" cellpadding="5" style="font-family: Geneva, Arial, Helvetica, san-serif; font-size: 14px; color: #000000; background-color: #0099CC">			  
+			  <tr>
+				<td align="center">SPACE# <select name="addToBox" size="1"></select></td>
+				<td><input name="" type="button" value="Submit" onClick="javascript:doAddEl()"></td>
+			  </tr>
+			  <tr>
+				  <td colspan="2" align="center"><br>NOTE: DEFAULT IS SPACE# 1</td>
+			  </tr>
+			</table>
+			</fieldset>
+	</td>
+  </tr>
+</table>
+</form>
+
+<form name="addToElCust">
+<table border="0" cellspacing="0" cellpadding="0" class="hideIt" id="addCusBox">
+  <tr>
+    <td>
+			
+			<fieldset><legend>Custom:</legend>
+			<table border="0" cellspacing="0" cellpadding="10" style="font-family: Geneva, Arial, Helvetica, san-serif; font-size: 14px; color: #000000; background-color: #0099CC">
+			  <tr>
+				<td>NAME: <input name="custDescName" type="text" value="(ie.) Make" size="8" maxlength="16"></td>
+				<td>DATA: <input name="custData" type="text" value="(ie.) Toyota" size="8" maxlength="16"></td>
+			  </tr>
+			</table>
+			</fieldset>
+			
+	</td>
+  </tr>
+  <tr>
+    <td>
+			
+			<fieldset><legend>ADD TO:</legend>
+			<table border="0" cellspacing="0" cellpadding="5" style="font-family: Geneva, Arial, Helvetica, san-serif; font-size: 14px; color: #000000; background-color: #0099CC">
+			  <tr>
+				<td colspan="2" align="center">SPACE# <select name="addToBoxCust" size="1"></select></td>
+				<td><input name="" type="button" value="Submit" onClick="javascript:doAddEl('Cust')"></td>
+			  </tr>
+			</table>
+			</fieldset>
+			
+
+	</td>
+  </tr>
+</table>
+</form>
+
+<table border="0" cellspacing="0" cellpadding="0" class="hideIt" id="addRanOpBox">
+  <tr> 
+    <td colspan="2" align="justify">Would you like to add <span id="itemToAdd"></span> to a random location?</td>
+  </tr>
+  <tr> 
+    <td align="center"><input name="" type="button" value="Yes" onClick="javascript:randomLoc('yes')"></td>
+    <td align="center"><input name="" type="button" value=" No " onClick="javascript:randomLoc('no')"></td>
+  </tr>
+</table>
+
+</body>
+</html>

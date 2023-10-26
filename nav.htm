@@ -1,0 +1,173 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" src="js/roll.js" type="text/JavaScript"></script>
+<link rel="stylesheet" href="nav.css" type="text/css">
+
+</head>
+
+<body bgcolor="#000000" onLoad="loadIt()">
+
+
+<table width="800" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="36" height="44"><img src="images/nav1.gif" width="36" height="44" border="0"></td>
+    <td width="94" height="44"><img src="images/nav2.gif" width="94" height="44" border="0"></td>
+    <td width="14" height="44"><img src="images/nav3.gif" width="14" height="44" border="0"></td>
+    <td width="94" height="44"><img src="images/nav4.gif" width="94" height="44" border="0"></td>
+    <td width="14" height="44"><img src="images/nav5.gif" width="14" height="44" border="0"></td>
+    <td width="94" height="44"><img src="images/nav6.gif" width="94" height="44" border="0"></td>
+    <td width="14" height="44"><img src="images/nav7.gif" width="14" height="44" border="0"></td>
+    <td width="94" height="44"><img src="images/nav8.gif" width="94" height="44" border="0"></td>
+    <td width="70" height="44"><img src="images/nav9.gif" width="70" height="44" border="0"></td>
+    <td colspan="2" nowrap width="276" height="44">
+	<div class="noteC"><a href="javascript:doBut('note')" onMouseOver="javascript:navOver('note')" onMouseOut="javascript:navOut()" name="noteL"><img src="images/noteBut.gif" width="151" height="44" border="0" id="note"></a></div>
+	<div class="printC"><a href="javascript:doBut('prnt')" onMouseOver="javascript:navOver('prnt')" onMouseOut="javascript:navOut()" name="prntL"><img src="images/prntBut.gif" width="125" height="44" border="0" id="prnt"></a></div></td>
+  </tr>
+  <tr>
+    <td width="36" height="10"><img src="images/nav10.gif" width="36" height="10" border="0"></td>
+    <td width="94" height="10"><img src="images/nav11.gif" width="94" height="10" border="0"></td>
+    <td width="14" height="10"><img src="images/nav12.gif" width="14" height="10" border="0"></td>
+    <td width="94" height="10"><img src="images/nav13.gif" width="94" height="10" border="0"></td>
+    <td width="14" height="10"><img src="images/nav14.gif" width="14" height="10" border="0"></td>
+    <td width="94" height="10"><img src="images/nav15.gif" width="94" height="10" border="0"></td>
+    <td width="14" height="10"><img src="images/nav16.gif" width="14" height="10" border="0"></td>
+    <td width="94" height="10"><img src="images/nav17.gif" width="94" height="10" border="0"></td>
+    <td width="70" height="10"><img src="images/nav18.gif" width="70" height="10" border="0"></td>
+    <td rowspan="2" width="182" height="46"><a href="javascript:doBut('help')" onMouseOver="javascript:navOver('help')" onMouseOut="javascript:navOut()" name="helpL"><img src="images/helpBut.gif" width="182" height="46" border="0" id="help"></a></td>
+	<td rowspan="2" width="94" height="44"><a href="javascript:doBut('xit')" onMouseOver="javascript:navOver('exit')" onMouseOut="javascript:navOut()" name="xitL"><img src="images/exitBut.gif" width="94" height="46" border="0" id="exit"></a></td>
+  </tr>
+  <tr>
+    <td width="36" height="36"><img src="images/nav19.gif" width="36" height="36" border="0"></td>
+    <td width="94" height="36"><a href="javascript:goTo('lambda')" onMouseOver="javascript:navOver('lam')" onMouseOut="javascript:navOut()" name="lambdaL"><img src="images/lamBut.gif" width="94" height="36" border="0" id="lam"></a></td>
+    <td width="14" height="36"><img src="images/nav20.gif" width="14" height="36" border="0"></td>
+    <td width="94" height="36"><a href="javascript:goTo('idle')" onMouseOver="javascript:navOver('idle')" onMouseOut="javascript:navOut()" name="idleL"><img src="images/idleBut.gif" width="94" height="36" border="0" id="idle"></a></td>
+    <td width="14" height="36"><img src="images/nav21.gif" width="14" height="36" border="0"></td>
+    <td width="94" height="36"><a href="javascript:goTo('cruise')" onMouseOver="javascript:navOver('cruise')" onMouseOut="javascript:navOut()" name="cruiseL"><img src="images/cruiseBut.gif" width="94" height="36" border="0" id="cruise"></a></td>
+    <td width="14" height="36"><img src="images/nav22.gif" width="14" height="36" border="0"></td>
+    <td width="94" height="36"><a href="javascript:goTo('custom')" onMouseOver="javascript:navOver('cus')" onMouseOut="javascript:navOut()" name="customL"><img src="images/cusBut.gif" width="94" height="36" border="0" id="cus"></a></td>
+    <td width="70" height="36"><img src="images/nav23.gif" width="70" height="36" border="0"></td>    
+  </tr>
+  <tr>
+    <td colspan="9" width="524" height="47"><img src="images/nav24.gif" width="524" height="47" border="0"></td>
+    <td colspan="2" width="276" height="47"><img src="images/nav25.gif" width="276" height="47" border="0"></td>    
+  </tr>
+</table>
+
+<a href="javascript:doBut('help')"><div style="position:absolute; left:900px; top:50px; color:#999999; text-decoration:none; cursor:help">About/Contact Author</div></a>
+
+<!-- *********************************************** -->
+<!-- SET SAVE NOTE VALUES -->
+<!-- *********************************************** -->
+
+<input name="pageHidIn" type="hidden" value="lambda">
+<input name="pageSecHidIn" type="hidden" value="main">
+<input name="lambdaNoteValue" type="hidden" value="">
+<input name="lambdaPrintCheck" type="hidden" value="">
+<input name="idleNoteValue" type="hidden" value="">
+<input name="idlePrintCheck" type="hidden" value="">
+<input name="cruiseNoteValue" type="hidden" value="">
+<input name="cruisePrintCheck" type="hidden" value="">
+<input name="customNoteValue" type="hidden" value="">
+<input name="customPrintCheck" type="hidden" value="">
+
+<!-- *********************************************** -->
+<!-- END SAVE NOTES VALUES -->
+<!-- *********************************************** -->
+
+
+
+<!-- *********************************************** -->
+<!-- SET SAVE GAS VALUES FOR PRINTING -->
+<!-- *********************************************** -->
+
+<!-- LAMBDA VALUES -->
+<input name="prntLambdaHC" type="hidden" value="">
+<input name="prntLambdaCO" type="hidden" value="">
+<input name="prntLambdaCO2" type="hidden" value="">
+<input name="prntLambdaO2" type="hidden" value="">
+<input name="prntLambdaHCV" type="hidden" value="1.8">
+<input name="prntLambdaOCV" type="hidden" value=".017">
+<input name="prntLambdaK1" type="hidden" value="6.0">
+<input name="prntLambdaA" type="hidden" value="">
+<input name="prntLambdaAFR" type="hidden" value="">
+<input name="prntLambdaSTAT" type="hidden" value="">
+
+<!-- IDLE VALUES -->
+<input name="prntIdleHC" type="hidden" value="">
+<input name="prntIdleCO" type="hidden" value="">
+<input name="prntIdleCO2" type="hidden" value="">
+<input name="prntIdleO2" type="hidden" value="">
+<input name="prntIdleHCV" type="hidden" value="1.8">
+<input name="prntIdleOCV" type="hidden" value=".017">
+<input name="prntIdleK1" type="hidden" value="6.0">
+<input name="prntIdleA" type="hidden" value="">
+<input name="prntIdleAFR" type="hidden" value="">
+<input name="prntIdleSTAT" type="hidden" value="">
+
+<input name="prntIdleHCLimit" type="hidden" value="">
+<input name="prntIdleCOLimit" type="hidden" value="">
+<input name="prntIdleCO2Limit" type="hidden" value="">
+<input name="prntIdleO2Limit" type="hidden" value="">
+<input name="prntIdleHCVLimit" type="hidden" value="1.8">
+<input name="prntIdleOCVLimit" type="hidden" value=".017">
+<input name="prntIdleK1Limit" type="hidden" value="6.0">
+<input name="prntIdleALimit" type="hidden" value="">
+
+<!-- CRUISE VALUES -->
+<input name="prntCruiseHC" type="hidden" value="">
+<input name="prntCruiseCO" type="hidden" value="">
+<input name="prntCruiseCO2" type="hidden" value="">
+<input name="prntCruiseO2" type="hidden" value="">
+<input name="prntCruiseHCV" type="hidden" value="1.8">
+<input name="prntCruiseOCV" type="hidden" value=".017">
+<input name="prntCruiseK1" type="hidden" value="6.0">
+<input name="prntCruiseA" type="hidden" value="">
+<input name="prntCruiseAFR" type="hidden" value="">
+<input name="prntCruiseSTAT" type="hidden" value="">
+
+<input name="prntCruiseHCLimit" type="hidden" value="">
+<input name="prntCruiseCOLimit" type="hidden" value="">
+<input name="prntCruiseCO2Limit" type="hidden" value="">
+<input name="prntCruiseO2Limit" type="hidden" value="">
+<input name="prntCruiseHCVLimit" type="hidden" value="1.8">
+<input name="prntCruiseOCVLimit" type="hidden" value=".017">
+<input name="prntCruiseK1Limit" type="hidden" value="6.0">
+<input name="prntCruiseALimit" type="hidden" value="">
+
+<!-- CUSTOM VALUES -->
+<input name="prntCustomHC" type="hidden" value="">
+<input name="prntCustomCO" type="hidden" value="">
+<input name="prntCustomCO2" type="hidden" value="">
+<input name="prntCustomO2" type="hidden" value="">
+<input name="prntCustomHCV" type="hidden" value="1.8">
+<input name="prntCustomOCV" type="hidden" value=".017">
+<input name="prntCustomK1" type="hidden" value="6.0">
+<input name="prntCustomA" type="hidden" value="">
+<input name="prntCustomAFR" type="hidden" value="">
+<input name="prntCustomSTAT" type="hidden" value="">
+
+<input name="prntCustomHCLimit" type="hidden" value="">
+<input name="prntCustomCOLimit" type="hidden" value="">
+<input name="prntCustomCO2Limit" type="hidden" value="">
+<input name="prntCustomO2Limit" type="hidden" value="">
+<input name="prntCustomHCVLimit" type="hidden" value="1.8">
+<input name="prntCustomOCVLimit" type="hidden" value=".017">
+<input name="prntCustomK1Limit" type="hidden" value="6.0">
+<input name="prntCustomALimit" type="hidden" value="">
+
+
+<!-- *********************************************** -->
+<!-- END SAVE GAS VALUES -->
+<!-- *********************************************** -->
+
+
+
+<!-- *********************************************** -->
+<!-- SET Values For Customer Information For PRINTING -->
+<!-- *********************************************** -->
+
+
+</body>
+</html>
