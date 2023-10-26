@@ -104,7 +104,7 @@ Pg1 = new String(Pg1);
 	var Pag = Pp1.substring('1',endAt);
 	gPage = startL.toUpperCase()+Pag;
 	
-parent.frames['bottomFrame'].eval('prnt'+gPage+prntG+Pl).value = eval(Pp1+Pl)[Pg1];
+parent.frames['bottomFrame'].document.getElementsByName('prnt'+gPage+prntG+Pl)[0].value = eval(Pp1+Pl)[Pg1];
 }
 
 function setPrntVal2(Pp2,Pg2,num) {
@@ -115,7 +115,7 @@ Pg2 = new String(Pg2);
 	var startL = Pp2.slice('0','1');
 	var Pag = Pp2.substring('1',endAt);
 	gPage = startL.toUpperCase()+Pag;
-parent.frames['bottomFrame'].eval('prnt'+gPage+prntG).value = num;
+parent.frames['bottomFrame'].document.getElementsByName('prnt'+gPage+prntG)[0].value = num;
 }
 
 function setPrntVal3(Pp3) {
@@ -124,7 +124,7 @@ Pp3 = new String(Pp3);
 	var startL = Pp3.slice('0','1');
 	var Pag = Pp3.substring('1',endAt);
 	gPage = startL.toUpperCase()+Pag;
-parent.frames['bottomFrame'].eval('prnt'+gPage+'ALimit').value = 1;
+parent.frames['bottomFrame'].document.getElementsByName('prnt'+gPage+'ALimit')[0].value = 1;
 }
 
  
