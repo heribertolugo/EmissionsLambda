@@ -7,6 +7,6 @@ The emission report would provide HC (in ppm), CO%, CO2% and O2%. At a later tim
 
 Using the Lambda equation provided/discovered/created by VolksWagon, given a set of values, one could determine if the vehicle is running rich or lean. \
 This knowledge can help diagnose a vehicle for emissions failures. An expensive diagnostic machine need not be used if you have the failed emissions report and access to this app.\
-A keen technician can claim to be able to determine rich or lean condition just by reading the failed emission report, but there are many scenarios where that judgement can be wrong.\
+A keen technician can claim to be able to determine rich or lean condition just by reading the failed emission report, but there are many scenarios where that judgement can be wrong.
 
 ![image](https://github.com/heribertolugo/EmissionsLambda/assets/26213368/fe8b6f92-b75d-48b9-8e82-505560bfea96)
