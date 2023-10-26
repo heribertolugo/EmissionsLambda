@@ -1,5 +1,5 @@
 # EmissionsLambda
-**TLDR;** Calculates a gas engines Lambda rating (air:fuel ratio) based on a old equation used by VolksWagon. more info [here](https://www.austincc.edu/wkibbe/lambda.htm) or view [WhatIsLambdaVw.txt](https://github.com/heribertolugo/EmissionsLambda/blob/main/WhatIsLambdaVw.txt)
+**TLDR;** Calculates a gas engines Lambda rating (air:fuel ratio) based on a old equation used by VolksWagon. more info [here](https://www.austincc.edu/wkibbe/lambda.htm) or view [austincc.edu_wkibbe_lambda.htm.pdf](https://github.com/heribertolugo/EmissionsLambda/blob/main/austincc.edu_wkibbe_lambda.htm.pdf)
 
 # Summary
 This web app built circa **2005** for Internet Explorer 5+ could be used to analyze a vehicle's emissions report for vehicles 95 or older in Connecticut, USA during this period for a few years.\
