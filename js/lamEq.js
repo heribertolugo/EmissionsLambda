@@ -24,71 +24,13 @@ function getInput(name) {
 
 
 
-lambdaGas = new Array();
-	lambdaGas['hc'] = "";
-	lambdaGas['co'] = "";
-	lambdaGas['co2'] = "";
-	lambdaGas['o2'] = "";
-	lambdaGas['hcv'] = "1.8";
-	lambdaGas['ocv'] = "0.017";
-	lambdaGas['k1'] = "6.0";
-	
-	
-idleGas = new Array();
-	idleGas['hc'] = "";
-	idleGas['co'] = "";
-	idleGas['co2'] = "";
-	idleGas['o2'] = "";
-	idleGas['hcv'] = "1.8";
-	idleGas['ocv'] = "0.017";
-	idleGas['k1'] = "6.0";
-	
-	idleGasLimit = new Array();
-	idleGasLimit['hc'] = "";
-	idleGasLimit['co'] = "";
-	idleGasLimit['co2'] = "0";
-	idleGasLimit['o2'] = "0";
-	idleGasLimit['hcv'] = "1.8";
-	idleGasLimit['ocv'] = "0.017";
-	idleGasLimit['k1'] = "6.0";
-	
-	
-cruiseGas = new Array();
-	cruiseGas['hc'] = "";
-	cruiseGas['co'] = "";
-	cruiseGas['co2'] = "";
-	cruiseGas['o2'] = "";
-	cruiseGas['hcv'] = "1.8";
-	cruiseGas['ocv'] = "0.017";
-	cruiseGas['k1'] = "6.0";
-	
-	cruiseGasLimit = new Array();
-	cruiseGasLimit['hc'] = "";
-	cruiseGasLimit['co'] = "";
-	cruiseGasLimit['co2'] = "0";
-	cruiseGasLimit['o2'] = "0";
-	cruiseGasLimit['hcv'] = "1.8";
-	cruiseGasLimit['ocv'] = "0.017";
-	cruiseGasLimit['k1'] = "6.0";
-	
-	
-customGas = new Array();
-	customGas['hc'] = "";
-	customGas['co'] = "";
-	customGas['co2'] = "";
-	customGas['o2'] = "";
-	customGas['hcv'] = "1.8";
-	customGas['ocv'] = "0.017";
-	customGas['k1'] = "6.0";
-	
-	customGasLimit = new Array();
-	customGasLimit['hc'] = "";
-	customGasLimit['co'] = "";
-	customGasLimit['co2'] = "0";
-	customGasLimit['o2'] = "0";
-	customGasLimit['hcv'] = "1.8";
-	customGasLimit['ocv'] = "0.017";
-	customGasLimit['k1'] = "6.0";
+var lambdaGas = {hc : '', co: '', co2: '', o2: '', hcv: 1.8, ocv: 0.017, k1: 6.0};	
+var idleGas = {hc : '', co: '', co2: '', o2: '', hcv: 1.8, ocv: 0.017, k1: 6.0};	
+var idleGasLimit = {hc : '', co: '', co2: '', o2: '', hcv: 1.8, ocv: 0.017, k1: 6.0};	
+var cruiseGas = {hc : '', co: '', co2: '', o2: '', hcv: 1.8, ocv: 0.017, k1: 6.0};
+var cruiseGasLimit = {hc : '', co: '', co2: '', o2: '', hcv: 1.8, ocv: 0.017, k1: 6.0};
+var customGas = {hc : '', co: '', co2: '', o2: '', hcv: 1.8, ocv: 0.017, k1: 6.0};
+var customGasLimit = {hc : '', co: '', co2: '', o2: '', hcv: 1.8, ocv: 0.017, k1: 6.0};
 
 
  
