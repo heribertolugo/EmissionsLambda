@@ -46,11 +46,11 @@ var pageVal = "lambda";
 function makeNote() {
 	note = document.getElementsByName('noteBox')[0].value; //noteBox.value;
 	
-	pageVal = opener.pageHidIn.value;
+	pageVal = opener.document.getElementsByName('pageHidIn')[0].value;
 
-		if (printOp.checked) printEn ="ok";
-		opener.eval(pageVal+'NoteValue').value = noteBox.value;
-		opener.eval(pageVal+'PrintCheck').value = printEn;
+		if (document.getElementsByName('printOp')[0].checked) printEn ="ok";
+		opener.document.getElementsByName(pageVal+'NoteValue')[0].value = document.getElementsByName('noteBox')[0].value;
+		opener.document.getElementsByName(pageVal+'PrintCheck')[0].value = printEn;
 		
 		setTimeout('self.close()',1500);
 }
@@ -59,13 +59,13 @@ function makeNote() {
 
 function writeNote() {
 
-pageVal = opener.getElementsByName('pageHidIn')[0].value;
+pageVal = opener.document.getElementsByName('pageHidIn')[0].value;
 
-	getObject('pageNote').innerHTML = opener.getElementsByName('pageHidIn')[0].value;
-	getObject('pageSection').innerHTML = opener.getElementsByName('pageSecHidIn')[0].value;
+	getObject('pageNote').innerHTML = opener.document.getElementsByName('pageHidIn')[0].value;
+	getObject('pageSection').innerHTML = opener.document.getElementsByName('pageSecHidIn')[0].value;
 	
-	noteBox.value = opener.getElementsByName(pageVal+'NoteValue')[0].value;
-		if (opener.getElementsByName(pageVal+'PrintCheck')[0].value=='ok')printOp.checked = true;
+	document.getElementsByName('noteBox')[0].value = opener.document.getElementsByName(pageVal+'NoteValue')[0].value;
+		if (opener.document.getElementsByName(pageVal+'PrintCheck')[0].value=='ok')printOp.checked = true;
 }
 
 
@@ -109,7 +109,7 @@ getObject(info+'Info').className=divSetting;
 	if (divSetting == "divShow") {
 		for (i=0; i<gasses.length; i++) {
 		getObject(info+sect).className='gasShow';
-		getObject('prev'+info+gasses[i]+Lim).innerHTML=opener.parent.frames['bottomFrame'].getElementsByName('prnt'+info+gasses[i]+L)[0].value;
+		getObject('prev'+info+gasses[i]+Lim).innerHTML=opener.parent.frames['bottomFrame'].document.getElementsByName('prnt'+info+gasses[i]+L)[0].value;
 		
 		}
 	}
@@ -128,11 +128,11 @@ function checkInput(P,L) {
 var showInfo = false;
 var p = P.toLowerCase();
 
-	if (opener.parent.frames['bottomFrame'].getElementsByName('prnt'+P+'HC'+L)[0].value!="") {
-		if (opener.parent.frames['bottomFrame'].getElementsByName('prnt'+P+'CO'+L)[0].value!="") {
-			if (opener.parent.frames['bottomFrame'].getElementsByName('prnt'+P+'CO2'+L)[0].value!="") {
-				if (opener.parent.frames['bottomFrame'].getElementsByName('prnt'+P+'O2'+L)[0].value!=""){
-					if (opener.parent.frames['bottomFrame'].getElementsByName('prnt'+P+'A'+L)[0].value!="") showInfo = true;
+	if (opener.parent.frames['bottomFrame'].document.getElementsByName('prnt'+P+'HC'+L)[0].value!="") {
+		if (opener.parent.frames['bottomFrame'].document.getElementsByName('prnt'+P+'CO'+L)[0].value!="") {
+			if (opener.parent.frames['bottomFrame'].document.getElementsByName('prnt'+P+'CO2'+L)[0].value!="") {
+				if (opener.parent.frames['bottomFrame'].document.getElementsByName('prnt'+P+'O2'+L)[0].value!=""){
+					if (opener.parent.frames['bottomFrame'].document.getElementsByName('prnt'+P+'A'+L)[0].value!="") showInfo = true;
 				}
 			}
 		}
@@ -140,8 +140,8 @@ var p = P.toLowerCase();
 	if (showInfo == true) {
 	divSetting = "divShow";
 	setDivPrev(P,L);
-		if (opener.parent.frames['bottomFrame'].getElementsByName(p+'PrintCheck')[0].value=='ok') {
-		getObject('prev'+P+'Note').innerHTML="Note: "+opener.parent.frames['bottomFrame'].getElementsByName(p+'NoteValue')[0].value;
+		if (opener.parent.frames['bottomFrame'].document.getElementsByName(p+'PrintCheck')[0].value=='ok') {
+		getObject('prev'+P+'Note').innerHTML="Note: "+opener.parent.frames['bottomFrame'].document.getElementsByName(p+'NoteValue')[0].value;
 		}
 	}/* else if (showInfo != true) {
 	divSetting = "divHide";
