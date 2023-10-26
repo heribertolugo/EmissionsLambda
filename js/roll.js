@@ -17,25 +17,27 @@ function getObject(id) {
 
 function loadIt() {
 
-	var but = new Array();
-		but[1] = "images/lamButOver.gif";
-		but[2] = "images/idleButOver.gif";
-		but[3] = "images/cruiseButOver.gif";
-		but[4] = "images/cusButOver.gif";
-		but[5] = "images/noteButOver.gif";
-		but[6] = "images/prntButOver.gif";
-		but[7] = "images/helpButOver.gif";
-		but[8] = "images/exitButOver.gif";
+	var but = {
+		1: 'images/lamButOver.gif', 
+		2: 'images/idleButOver.gif', 
+		3: 'images/cruiseButOver.gif', 
+		4: 'images/cusButOver.gif', 
+		5: 'images/noteButOver.gif', 
+		6: 'images/prntButOver.gif', 
+		7: 'images/helpButOver.gif', 
+		8: 'images/exitButOver.gif'
+	};
 		
-	var size = new Array();
-		size[1] = "94,36";
-		size[2] = "94,36";
-		size[3] = "94,36";
-		size[4] = "94,36";
-		size[5] = "151,44";
-		size[6] = "125,44";
-		size[7] = "182,46";
-		size[8] = "94,46";
+	var size = {
+		1: '94,36', 
+		2: '94,36', 
+		3: '94,36', 
+		4: '94,36', 
+		5: '151,44', 
+		6: '125,44', 
+		7: '182,46', 
+		8: '94,46'
+	};
 	
 	var over = 1;
 	while (over <9) {
@@ -68,16 +70,13 @@ function navOut() {
 
 function goTo(p) {
 
-	viewing = new Array;
-	viewing['lambda'] = '100%,0,0,0';
-	viewing['idle']   = '0,100%,0,0';
-	viewing['cruise'] = '0,0,100%,0';
-	viewing['custom'] = '0,0,0,100%';
+	viewing = {lambda: '100%,0,0,0', idle: '0,100%,0,0', cruise: '0,0,100%,0', custom: '0,0,0,100%'};
 	
 	if (IEDOM) parent.pagesFrm.cols=viewing[p];
 	else if (W3CDOM) parent.document.getElementById('pagesFrm').cols=viewing[p];
 	getObject(p+'L').blur();
-	pageHidIn.value=p;
+	parent.frames['bottomFrame'].document.getElementsByName('pageHidIn')[0].value = p;
+	//pageHidIn.value=p;
 }
 
 
