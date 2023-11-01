@@ -1,9 +1,13 @@
 # EmissionsLambda
-**TLDR;** Calculates a gas engines Lambda rating (air:fuel ratio) based on a old equation used by VolksWagon that I found in an automotive magazine. It is one of the many variants of the Brettshneider equation. more info [here](https://www.austincc.edu/wkibbe/lambda.htm) or view [austincc.edu_wkibbe_lambda.htm.pdf](https://github.com/heribertolugo/EmissionsLambda/blob/main/austincc.edu_wkibbe_lambda.htm.pdf)
+**TLDR;** Calculates a gas engines Lambda rating (air:fuel ratio) based on a old equation used by VolksWagon that I found in an automotive magazine. It is one of the many variants of the Brettshneider equation. more info [here](https://www.austincc.edu/wkibbe/lambda.htm) or view [austincc.edu_wkibbe_lambda.htm.pdf](https://github.com/heribertolugo/EmissionsLambda/blob/main/austincc.edu_wkibbe_lambda.htm.pdf) or [09A_Alt-Fuels-Brettschneider-Series-3](https://github.com/heribertolugo/EmissionsLambda/blob/main/09A_Alt-Fuels-Brettschneider-Series-3.pdf)
+
+**NEW** working version created in Angular can be found [here](https://github.com/heribertolugo/lambda-emissions).
 
 # Summary
 This web app built circa **2005** for Internet Explorer 5+ could be used to analyze a vehicle's emissions report for vehicles 95 or older in Connecticut, USA during this period for a few years.\
 The emission report would provide HC (in ppm), CO%, CO2% and O2%. At a later time (years later) they removed O2 levels from the report, making this app pretty useless, as in order to get the value of O2 you would need an expensive machine which would be the same machine you can use to perform a diagnostic in the first place.
+
+I attempted to hack-fix this project for newer browsers, but still needs some work to get all features working. The index page contains a link to the attempted fix.
 
 Using the Brettshneider Lambda equation, given a set of values, one could determine if the vehicle is running rich, lean or stoichiometric. \
 The Lambda rating also tells you how far off the vehicle is from stoichiometry, stoichiometric being 1 (optimal - perfect combustion with air/fuel ratio 14.7:1).\
